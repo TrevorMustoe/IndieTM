@@ -7,7 +7,7 @@ import { signOut } from '../utils/auth';
 
 function NavigationBar() {
   return (
-    <Navbar style={{ paddingLeft: 20, paddingRight: 20 }} collapseOnSelect bg="dark" data-bs-theme="dark" expand="lg" className="bg-body-tertiary">
+    <Navbar style={{ paddingLeft: 20, paddingRight: 20 }} collapseOnSelect bg="dark" data-bs-theme="dark" expand="lg">
       <Navbar.Brand href="/">
         <Image src="/IndieLogo2.png" height={40} />
       </Navbar.Brand>
