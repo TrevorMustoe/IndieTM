@@ -15,6 +15,18 @@ const getAllDates = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getDatesByTourId = (tourID) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/tourDates.json?orderBy="tourID"&equalTo="${tourID}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
 // // Api call to get a single date
 // const getSingleDate = (firebaseKey) => new Promise((resolve, reject) => {
 //   fetch(`${endpoint}/tourDates/${firebaseKey}.json`, {
@@ -69,4 +81,4 @@ const deleteDates = (firebaseKey) => new Promise((resolve, reject) => {
 //     .catch(reject);
 // });
 
-export { getAllDates, deleteDates };
+export { getAllDates, deleteDates, getDatesByTourId };
