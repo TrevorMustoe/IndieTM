@@ -1,5 +1,4 @@
 import AddShowForm from '../components/addShowForm';
-import TourPickerForm from '../components/TourPickerForm';
 
 function ShowForm() {
   return (
@@ -13,7 +12,6 @@ function ShowForm() {
     }}
     >
       <h1 style={{ color: 'white' }}>SHOW FORM</h1>
-      <TourPickerForm />
       <AddShowForm />
     </div>
 
