@@ -28,17 +28,17 @@ const getDatesByTourId = (tourID) => new Promise((resolve, reject) => {
 });
 
 // // Api call to get a single date
-// const getSingleDate = (firebaseKey) => new Promise((resolve, reject) => {
-//   fetch(`${endpoint}/tourDates/${firebaseKey}.json`, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
-//     .then((response) => response.json())
-//     .then((data) => resolve(data))
-//     .catch(reject);
-// });
+const getSingleDate = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/tourDates/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
 
 // // Api call to create a new Date
 const createDate = (payload) => new Promise((resolve, reject) => {
@@ -82,5 +82,5 @@ const updateDate = (payload) => new Promise((resolve, reject) => {
 });
 
 export {
-  getAllDates, deleteDates, getDatesByTourId, updateDate, createDate,
+  getAllDates, deleteDates, getDatesByTourId, updateDate, createDate, getSingleDate,
 };
