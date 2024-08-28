@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { deleteDates } from './api/datesData';
@@ -22,7 +23,9 @@ function DateCard({ dateObj, onUpdate }) {
         <Card.Title>Venue: {dateObj.venueName}</Card.Title>
         <Card.Title style={{ color: 'white', fontWeight: '100' }}>{dateObj.city}</Card.Title>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '30px' }}>
-          <Button variant="success">View Show Details</Button>
+          <Link href={`/dates/${dateObj.firebaseKey}`} passHref>
+            <Button variant="success" className="m-2">View Show Details</Button>
+          </Link>
           <Button onClick={deleteThisDate} variant="danger">Delete Show</Button>
         </div>
       </Card.Body>

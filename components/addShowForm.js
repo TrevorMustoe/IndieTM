@@ -70,6 +70,7 @@ function AddShowForm({ obj }) {
   };
   return (
     <Form onSubmit={handleSubmit}>
+      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Tour</h2>
       <div>
         <FloatingLabel
           controlId="floatingSelect"
