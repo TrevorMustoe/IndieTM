@@ -57,7 +57,7 @@ function AddShowForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateDate(formInput).then(() => router.push(`/tourDates/${obj.firebaseKey}`));
+      updateDate(formInput).then(() => router.push(`/dates/${obj.firebaseKey}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createDate(payload).then(({ name }) => {
