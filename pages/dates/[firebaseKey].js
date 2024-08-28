@@ -117,6 +117,9 @@ export default function ViewDate() {
         <Link href={`/dates/edit/${dateDetails.firebaseKey}`} passHref>
           <Button variant="success" className="m-2">Edit</Button>
         </Link>
+        <Link href="/showFullTour" passHref>
+          <Button variant="success" className="m-2">Back</Button>
+        </Link>
       </div>
     </div>
   );

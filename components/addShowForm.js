@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { FloatingLabel } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
@@ -381,6 +382,11 @@ function AddShowForm({ obj }) {
         <Button style={{ margin: '10px', width: '40%' }} variant="success" type="submit">
           Submit
         </Button>
+        {obj.firebaseKey && (
+        <Link href={`/dates/${obj.firebaseKey}`} passHref>
+          <Button variant="danger" className="m-2">Go Back</Button>
+        </Link>
+        )}
       </div>
     </Form>
   );
