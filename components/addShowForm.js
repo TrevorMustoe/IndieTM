@@ -71,9 +71,12 @@ function AddShowForm({ obj }) {
   return (
     <Form onSubmit={handleSubmit}>
       <div>
-        <FloatingLabel controlId="floatingSelect" label="Tours">
+        <FloatingLabel
+          controlId="floatingSelect"
+          label="Tours"
+        >
           <Form.Select
-            aria-label="Tours"
+            aria-label="Toursssss"
             name="tourID"
             onChange={handleChange}
             className="mb-3"
@@ -95,7 +98,7 @@ function AddShowForm({ obj }) {
         }}
         >
           <div style={{
-            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
           }}
           >
             <label htmlFor="date">Enter Date:</label>
@@ -120,7 +123,7 @@ function AddShowForm({ obj }) {
           </div>
 
           <div style={{
-            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
           }}
           >
             <label htmlFor="state">Enter State:</label>
@@ -146,7 +149,7 @@ function AddShowForm({ obj }) {
         </div>
 
         <div style={{
-          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
         }}
         >
           <label htmlFor="city">City Name:</label>
@@ -171,7 +174,7 @@ function AddShowForm({ obj }) {
         </div>
 
         <div style={{
-          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
         }}
         >
 
@@ -197,7 +200,7 @@ function AddShowForm({ obj }) {
         </div>
 
         <div style={{
-          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
         }}
         >
 
@@ -222,7 +225,7 @@ function AddShowForm({ obj }) {
 
         </div>
         <div style={{
-          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
         }}
         >
           <label htmlFor="hospitalityName">Hotel Name:</label>
@@ -248,7 +251,7 @@ function AddShowForm({ obj }) {
 
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div style={{
-            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
           }}
           >
             <label htmlFor="loadinTime">Load In:</label>
@@ -273,7 +276,7 @@ function AddShowForm({ obj }) {
           </div>
 
           <div style={{
-            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
           }}
           >
             <label htmlFor="soundCheck">Sound Check:</label>
@@ -300,7 +303,7 @@ function AddShowForm({ obj }) {
 
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div style={{
-            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
           }}
           >
             <label htmlFor="doorTime">Door Time:</label>
@@ -325,7 +328,7 @@ function AddShowForm({ obj }) {
           </div>
 
           <div style={{
-            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
           }}
           >
             <label htmlFor="setTime">Enter Set Time:</label>
@@ -351,7 +354,7 @@ function AddShowForm({ obj }) {
         </div>
 
         <div style={{
-          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px', paddingRight: '10px', paddingLeft: '10px',
+          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
         }}
         >
           <label htmlFor="loudoutTime">Enter Set Time:</label>
@@ -374,7 +377,7 @@ function AddShowForm({ obj }) {
           />
         </div>
 
-        <Button style={{ margin: '10px' }} variant="primary" type="submit">
+        <Button style={{ margin: '10px', width: '40%' }} variant="success" type="submit">
           Submit
         </Button>
       </div>
