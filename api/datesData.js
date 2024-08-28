@@ -41,18 +41,18 @@ const getDatesByTourId = (tourID) => new Promise((resolve, reject) => {
 // });
 
 // // Api call to create a new Date
-// const createDate = (payload) => new Promise((resolve, reject) => {
-//   fetch(`${endpoint}/tourDates.json`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(payload),
-//   })
-//     .then((response) => response.json())
-//     .then((data) => resolve(data))
-//     .catch(reject);
-// });
+const createDate = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/tourDates.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
 
 // // Api call for deleting tour dates
 const deleteDates = (firebaseKey) => new Promise((resolve, reject) => {
@@ -68,17 +68,19 @@ const deleteDates = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // // Api call for updating tour dates
-// const updateDate = (payload) => new Promise((resolve, reject) => {
-//   fetch(`${endpoint}/tourDates/${payload.firebaseKey}.json`, {
-//     method: 'PATCH',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(payload),
-//   })
-//     .then((response) => response.json())
-//     .then((data) => resolve(data))
-//     .catch(reject);
-// });
+const updateDate = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/tourDates/${payload.firebaseKey}.json`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
 
-export { getAllDates, deleteDates, getDatesByTourId };
+export {
+  getAllDates, deleteDates, getDatesByTourId, updateDate, createDate,
+};
