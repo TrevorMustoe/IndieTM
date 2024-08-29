@@ -18,7 +18,6 @@ a {
 }
 
 body {
-  background-color: black;
+  background-color: rgb(13, 13, 13);
   color: whitesmoke;
-  background-image: url(../../IndieTM/public/square272466119203.png);
 }
