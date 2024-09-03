@@ -15,15 +15,20 @@ const getAllDates = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getDatesByTourId = (tourID) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/tourDates.json?orderBy="tourID"&equalTo="${tourID}"`, {
+const getDatesByTourId = (userUID, tourID) => new Promise((resolve, reject) => {
+  // Fetch all dates for the user
+  fetch(`${endpoint}/tourDates.json?orderBy="uid"&equalTo="${userUID}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+    // Filter the dates by tourID
+      const filteredDates = Object.values(data).filter((date) => date.tourID === tourID);
+      resolve(filteredDates);
+    })
     .catch(reject);
 });
 
