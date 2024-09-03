@@ -161,6 +161,7 @@ function AddShowForm({ obj }) {
             name="city"
             value={formInput.city}
             onChange={handleChange}
+            className="forminputs"
             required
             style={{
               width: '100%',
@@ -333,7 +334,7 @@ function AddShowForm({ obj }) {
             flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
           }}
           >
-            <label htmlFor="setTime">Enter Set Time:</label>
+            <label htmlFor="setTime">Set Time:</label>
             <input
               type="text"
               placeholder="Set Time"
@@ -359,7 +360,7 @@ function AddShowForm({ obj }) {
           flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
         }}
         >
-          <label htmlFor="loudoutTime">Enter Set Time:</label>
+          <label htmlFor="loudoutTime">Load Out Time:</label>
           <input
             type="text"
             placeholder="Load Out"
