@@ -30,8 +30,8 @@ function ShowFullTour() {
           gap: '20px',
         }}
       >
-        {dates.map((tourDates) => (
-          <DateCard key={tourDates.firebaseKey} dateObj={tourDates} onUpdate={() => {}} />
+        {dates.map((dateObj) => (
+          <DateCard key={dateObj.firebaseKey} dateObj={dateObj} onUpdate={() => {}} />
         ))}
       </div>
     </div>

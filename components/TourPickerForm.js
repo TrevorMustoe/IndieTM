@@ -28,7 +28,8 @@ function TourPickerForm({ obj, onSelectTour }) {
     }));
 
     if (value) {
-      getDatesByTourId(value).then(onSelectTour);
+      getDatesByTourId(user.uid, value).then(onSelectTour)
+        .catch((err) => console.error('Error fetching dates by tour ID:', err));
     }
   };
 
