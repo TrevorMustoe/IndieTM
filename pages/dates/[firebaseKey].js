@@ -20,7 +20,6 @@ export default function ViewDate() {
 
   return (
     <div style={{
-      marginTop: '20px',
       marginBottom: '30px',
       width: '100%',
       display: 'flex',
@@ -29,64 +28,44 @@ export default function ViewDate() {
     }}
     >
       <div style={{
-        marginTop: '20px',
-        marginBottom: '30px',
+        marginTop: '110px',
+        marginBottom: '0px',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}
       >
-        <h1 style={{ color: 'white' }}>SHOW INFO</h1>
+        <h1 style={{ fontWeight: 'bold', color: 'black' }}>{dateDetails.date}, {dateDetails.city}</h1>
+        <h2 style={{ fontWeight: 'bold', color: 'black' }}>{dateDetails.city}, {dateDetails.state}</h2>
       </div>
       <div style={{
-        marginTop: '20px',
-        marginBottom: '30px',
+        marginTop: '10px',
+        marginBottom: '20px',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        border: 'solid lightgrey 4px',
         padding: '20px',
       }}
       >
-        <h1 style={{ color: 'white' }}>Venue</h1>
-        <hr style={{
-          width: '50%',
-          border: '1px solid white',
-          marginTop: '10px',
-          marginBottom: '20px',
-        }}
-        />
-        <h3 style={{ color: 'white' }}>{dateDetails.venueName}</h3>
-        <p style={{ color: 'white' }}>{dateDetails.venueAddress}</p>
-        <hr style={{
-          width: '100%',
-          border: '2px solid white',
-          marginTop: '10px',
-          marginBottom: '20px',
-        }}
-        />
-        <h1 style={{ color: 'white' }}>Hospitality</h1>
-        <hr style={{
-          width: '50%',
-          border: '1px solid white',
-          marginTop: '10px',
-          marginBottom: '20px',
-        }}
-        />
-        <h3 style={{ color: 'lightgrey' }}>{dateDetails.hospitalityName}</h3>
-        <hr style={{
-          width: '100%',
-          border: '2px solid white',
-          marginTop: '10px',
-          marginBottom: '20px',
-        }}
-        />
-        <h3 style={{ color: 'white' }}>Run Of Show</h3>
+        <div className="venueHospWrap">
+          <div className="venueWrap">
+            <h1 style={{ color: 'black' }}>Venue</h1>
+            <h3 style={{ color: 'black' }}>{dateDetails.venueName}</h3>
+            <p style={{ color: 'black' }}>{dateDetails.venueAddress}</p>
+          </div>
+          <div className="hospWrap">
+            <h1 style={{ color: 'black' }}>Hospitality</h1>
+            <h3 style={{ color: 'black' }}>{dateDetails.hospitalityName}</h3>
+          </div>
+        </div>
+
+        <h3 style={{ color: 'black' }}>Run Of Show</h3>
         <div style={{
           marginTop: '5px',
           width: '50%',
+          marginBottom: '0px',
         }}
         >
           <Table bordered size="sm" variant="dark">
@@ -114,11 +93,28 @@ export default function ViewDate() {
             </tbody>
           </Table>
         </div>
+      </div>
+      <div style={{
+        display: 'flex', justifyContent: 'space-between',
+      }}
+      >
         <Link href={`/dates/edit/${dateDetails.firebaseKey}`} passHref>
-          <Button variant="success" className="m-2">Edit</Button>
+          <Button
+            style={{
+              marginRight: '10px', marginLeft: '10px', paddingLeft: '50px', paddingRight: '50px',
+            }}
+            variant="success"
+          >Edit
+          </Button>
         </Link>
         <Link href="/showFullTour" passHref>
-          <Button variant="success" className="m-2">Back</Button>
+          <Button
+            style={{
+              marginRight: '10px', marginLeft: '10px', paddingLeft: '50px', paddingRight: '50px',
+            }}
+            variant="danger"
+          >Back
+          </Button>
         </Link>
       </div>
     </div>

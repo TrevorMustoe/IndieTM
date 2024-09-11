@@ -18,6 +18,79 @@ a {
 }
 
 body {
-  background-color: rgb(13, 13, 13);
+  background-color: black;
   color: whitesmoke;
+}
+
+.dashMain{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 0% 1fr;
+  
+}
+
+.header{
+  grid-column: 2 / 2;
+  grid-row: 1 / 2;
+}
+
+.sidebar{
+  grid-column: 1 / 2;
+  grid-row: 2 / 2;
+  background-color: #212529;
+  
+}
+
+.main{
+  grid-column: 2 / 2;
+  grid-row: 2 / 2;
+  background-color: #bec3c8;
+ 
+}
+
+.sideLinks{
+  color: white;
+  font-weight: bold;
+  padding: 10% 5% 10% 5%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sideLinks:hover{
+  background-color: black;
+}
+
+.lines{
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
+
+.iconhome{
+  margin-right: 10px;
+}
+
+.venueHospWrap{
+display: flex;
+flex-direction: row;
+border: red solid 5px;
+width: 100%;
+justify-content: space-around;
+}
+
+.venueWrap{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border: purple solid 3px;
+  text-align: center;
+}
+
+.hospWrap{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border: purple solid 3px;
+  text-align: center;
 }

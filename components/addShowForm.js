@@ -1,15 +1,12 @@
-import Button from 'react-bootstrap/Button';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { FloatingLabel } from 'react-bootstrap';
+import { FloatingLabel, Button, Form } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
-import Form from 'react-bootstrap/Form';
 import { useAuth } from '../utils/context/authContext';
 import { getTours } from '../api/tourData';
 import { updateDate, createDate } from '../api/datesData';
 
-// TODO Change the intial states below
 const initialState = {
   tourID: '',
   date: '',
@@ -23,55 +20,62 @@ const initialState = {
   soundCheck: '',
   loadoutTime: '',
   venueAddress: '',
-  firebaseKey: '',
-  uid: '',
 };
+// setting ititial state of each of these from inputs to empty strings
 
 function AddShowForm({ obj }) {
-  // this sets the inital state using the blank varaiables
   const [formInput, setFormInput] = useState(initialState);
-  // These are called state variables
+  // using useState to set the formInput state to initaial state from above
   const [tours, setTours] = useState([]);
+  // setting tour state to an empty array to be able to store and change the tour state
   const router = useRouter();
+  // setting router to useRouter that will allow us to navigate to different pages when called
 
   const { user } = useAuth();
+  // getting the userInfo and setting it to an object called user
 
   useEffect(() => {
     getTours(user.uid).then(setTours);
+    // gets all tour from getTours Api call and passes in user.uid to make sure its only getting the individual user's info
+    // then it sets the state of tours with the return data from the api call
 
     if (obj.firebaseKey) setFormInput(obj);
+    // chekcks if there is a obj being passed with a firebaseKey and sets the formInput to pass in the obj.
   }, [obj, user]);
+  // makes sure to update when obj or user are changed
 
-  // this handles the changes to the book form
   const handleChange = (e) => {
-    // this is grabbing from the title input keys
     const { name, value } = e.target;
-    // this is called to change state. previous state is what the previous state is called
     setFormInput((prevState) => ({
-      // this spreads an object out
       ...prevState,
-      // this gives the value of what ever the user inputs
       [name]: value,
     }));
   };
+  // setting the state of formInput to get the info the user inputs as well as keep the previous info the user inputs
+  // more notes on this in tour picker form
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
+      // checks if the obj has a firebasekey assosiated.
       updateDate(formInput).then(() => router.push(`/dates/${obj.firebaseKey}`));
+      // calls the updateDate function using the form input and then routes the last dates diplayed
     } else {
       const payload = { ...formInput, uid: user.uid };
       createDate(payload).then(({ name }) => {
+        // this creates a new date then gets the firebaseKey
         const patchPayload = { firebaseKey: name };
         updateDate(patchPayload).then(() => {
+          // this is to update the new date with a firebasekey
           router.push('/showFullTour');
+          // routes to full tour
         });
       });
     }
   };
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Tour</h2>
+      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create New'} Date</h2>
       <div>
         <FloatingLabel
           controlId="floatingSelect"
@@ -379,7 +383,6 @@ function AddShowForm({ obj }) {
             }}
           />
         </div>
-
         <Button style={{ margin: '10px', width: '40%' }} variant="success" type="submit">
           Submit
         </Button>
