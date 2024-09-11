@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DateCard from '../dateCard';
+import DateCard from '../components/dateCard';
 import TourPickerForm from '../components/TourPickerForm';
 
 function ShowFullTour() {
@@ -12,7 +12,7 @@ function ShowFullTour() {
   return (
     <div
       style={{
-        marginTop: '70px',
+        marginTop: '15vh',
         marginBottom: '30px',
         width: '100%',
         display: 'flex',
@@ -20,18 +20,20 @@ function ShowFullTour() {
         alignItems: 'center',
       }}
     >
-      <h5 style={{ color: 'white', marginBottom: '20px' }}>Please select a tour below:</h5>
+      <h5 style={{ color: '#212529', marginBottom: '20px' }}>Please select a tour below:</h5>
       <TourPickerForm onSelectTour={handleSelectTour} />
       <div
         style={{
           display: 'flex',
           flexWrap: 'wrap',
-          justifyContent: 'start',
+          justifyContent: 'flex-start',
+          marginLeft: '45px',
+          marginRight: '30px',
           gap: '20px',
         }}
       >
         {dates.map((dateObj) => (
-          <DateCard key={dateObj.firebaseKey} dateObj={dateObj} onUpdate={() => {}} />
+          <DateCard key={dateObj.firebaseKey} dateObj={dateObj} />
         ))}
       </div>
     </div>

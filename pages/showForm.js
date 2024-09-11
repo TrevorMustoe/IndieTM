@@ -11,7 +11,6 @@ function ShowForm() {
       alignItems: 'center',
     }}
     >
-      <h1 style={{ color: 'white' }}>SHOW FORM</h1>
       <AddShowForm />
     </div>
 

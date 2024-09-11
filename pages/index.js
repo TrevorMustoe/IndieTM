@@ -9,7 +9,7 @@ function Home() {
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
     >
-      <Image src="/IndieLogo2.png" height={200} width={200} style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '40px' }} />
+      <Image src="/IndieLogo2.png" height={200} width={200} style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '120px' }} />
       <div style={{
         padding: '5px',
         maxWidth: '400px',
