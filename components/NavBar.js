@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import {
-  Navbar, Nav, Button,
+  Navbar, Button,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 
@@ -11,11 +11,6 @@ function NavigationBar() {
       <Navbar.Brand href="/" />
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="me-auto">
-          {/* <Nav.Link href="/showForm">Add Show</Nav.Link>
-          <Nav.Link href="/showFullTour">View Full Tour</Nav.Link>
-          <Nav.Link href="/dashboard">DashTest</Nav.Link> */}
-        </Nav>
         <Button variant="danger" onClick={signOut}>Sign Out</Button>
       </Navbar.Collapse>
     </Navbar>
