@@ -21,7 +21,7 @@ function ShowFullTour() {
         alignContent: 'stretch',
       }}
     >
-      <h5 style={{ color: '#212529', marginBottom: '20px' }}>Please select a tour below:</h5>
+      <h5 style={{ color: 'var(--accent-color-1)', marginBottom: '20px' }}>Please select a tour below:</h5>
       <TourPickerForm onSelectTour={handleSelectTour} />
       <div
         style={{

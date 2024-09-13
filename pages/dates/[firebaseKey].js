@@ -52,13 +52,13 @@ export default function ViewDate() {
         <div className="venueHospWrap">
           <div className="venueWrap">
             <h3 style={{ color: 'white', fontWeight: 'bold' }}>Venue</h3>
-            <hr />
+            <hr style={{ color: 'white' }} />
             <p style={{ color: 'white' }}>{dateDetails.venueName}</p>
             <p style={{ color: 'white' }}>{dateDetails.venueAddress}</p>
           </div>
           <div className="hospWrap">
             <h3 style={{ color: 'white', fontWeight: 'bold' }}>Hospitality</h3>
-            <hr />
+            <hr style={{ color: 'white' }} />
             <hp style={{ color: 'white' }}>{dateDetails.hospitalityName}</hp>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function ViewDate() {
             }}
             >Run Of Show
             </h3>
-            <hr />
+            <hr style={{ color: 'white' }} />
             <Table size="lg" variant="dark">
               <tbody>
                 <tr>
