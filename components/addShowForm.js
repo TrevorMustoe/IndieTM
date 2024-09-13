@@ -74,9 +74,9 @@ function AddShowForm({ obj }) {
     }
   };
   return (
-    <div style={{ margin: '50px' }}>
+    <div style={{ margin: '50px', color: 'var(--accent-color-1)' }}>
       <Form onSubmit={handleSubmit}>
-        <h2 className="text-black mt-5">{obj.firebaseKey ? 'Update' : 'Create New'} Date</h2>
+        <h2 className="mt-5">{obj.firebaseKey ? 'Update' : 'Create New'} Date</h2>
         <div>
           <FloatingLabel
             controlId="floatingSelect"
@@ -99,7 +99,7 @@ function AddShowForm({ obj }) {
             </Form.Select>
           </FloatingLabel>
         </div>
-        <div style={{ color: 'black' }}>
+        <div>
           <div style={{
             display: 'flex', justifyContent: 'space-between',
           }}
@@ -121,7 +121,7 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-                  color: 'black',
+
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -146,7 +146,7 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-                  color: 'black',
+
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -173,7 +173,7 @@ function AddShowForm({ obj }) {
                 height: '40px',
                 paddingLeft: '16px',
                 backgroundColor: 'white',
-                color: 'black',
+
                 borderRadius: '10px',
                 border: 'solid white 2px',
               }}
@@ -199,7 +199,7 @@ function AddShowForm({ obj }) {
                 height: '40px',
                 paddingLeft: '16px',
                 backgroundColor: 'white',
-                color: 'black',
+
                 borderRadius: '10px',
                 border: 'solid white 2px',
               }}
@@ -225,7 +225,7 @@ function AddShowForm({ obj }) {
                 height: '40px',
                 paddingLeft: '16px',
                 backgroundColor: 'white',
-                color: 'black',
+
                 borderRadius: '10px',
                 border: 'solid white 2px',
               }}
@@ -249,7 +249,7 @@ function AddShowForm({ obj }) {
                 height: '40px',
                 paddingLeft: '16px',
                 backgroundColor: 'white',
-                color: 'black',
+
                 borderRadius: '10px',
                 border: 'solid white 2px',
               }}
@@ -275,7 +275,7 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-                  color: 'black',
+
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -300,7 +300,7 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-                  color: 'black',
+
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -327,7 +327,7 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-                  color: 'black',
+
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -352,7 +352,7 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-                  color: 'black',
+
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -378,7 +378,6 @@ function AddShowForm({ obj }) {
                 height: '40px',
                 paddingLeft: '16px',
                 backgroundColor: 'white',
-                color: 'black',
                 borderRadius: '10px',
                 border: 'solid white 2px',
               }}

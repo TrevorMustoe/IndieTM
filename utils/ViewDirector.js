@@ -8,6 +8,13 @@ import Signin from '../components/Signin';
 import NavigationBar from '../components/NavBar';
 
 const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
+  const darkModeToggle = (e) => {
+    if (e.target.checked) {
+      document.querySelector('body').setAttribute('data-theme', 'dark');
+    } else {
+      document.querySelector('body').setAttribute('data-theme', 'light');
+    }
+  };
   const { user, userLoading } = useAuth();
 
   // if user state is null, then show loader
@@ -107,7 +114,7 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
 
               <div style={{ display: 'flex', justifyContent: 'space-evenly' }} className="sideLinks">
                 <h5>☀️</h5>
-                <Form.Switch />
+                <Form.Switch onChange={darkModeToggle} />
                 <h5>🌙</h5>
               </div>
             </div>

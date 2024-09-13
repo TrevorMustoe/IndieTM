@@ -1,5 +1,23 @@
 @import 'bootstrap/dist/css/bootstrap.css';
 
+:root{
+  --background-color: #bec3c8;
+  --accent-color-1: #bec3c8;
+  --accent-color-2: #273c4d;
+}
+
+[data-theme='dark']{
+  --background-color: #2a2f36;
+  --accent-color-1: #bec3c8;
+  --accent-color-2: #273c4d;
+}
+
+[data-theme='light']{
+  --background-color: #bec3c8;
+  --accent-color-1: #212529;
+  --accent-color-2: #273c4d;
+}
+
 html,
 body {
   padding: 0;
@@ -15,12 +33,11 @@ a {
 
 * {
   box-sizing: border-box;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 body {
-  background-color: black;
-  color: whitesmoke;
+  background-color: var(--background-color);
 }
 
 .dashMain{
@@ -46,7 +63,7 @@ body {
 .main{
   grid-column: 2 / 2;
   grid-row: 2 / 2;
-  background-color: #bec3c8;
+  background-color: var(--main-light);
  
 }
 

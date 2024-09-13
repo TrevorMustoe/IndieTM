@@ -17,7 +17,11 @@ function Home() {
       }}
       >
         <div style={{
-          border: 'white solid 2px', padding: '80px', backgroundColor: '#212529', borderRadius: '30px',
+          border: 'var(--accent-color-1) solid 2px',
+          padding: '80px',
+          backgroundColor: 'var(--accent-color-2)',
+          borderRadius: '30px',
+          color: 'white',
         }}
         >
           <h1 style={{ fontWeight: '100' }}>Welcome</h1>
