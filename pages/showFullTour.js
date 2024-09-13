@@ -18,6 +18,7 @@ function ShowFullTour() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        alignContent: 'stretch',
       }}
     >
       <h5 style={{ color: '#212529', marginBottom: '20px' }}>Please select a tour below:</h5>
@@ -26,7 +27,7 @@ function ShowFullTour() {
         style={{
           display: 'flex',
           flexWrap: 'wrap',
-          justifyContent: 'flex-start',
+          justifyContent: 'start',
           marginLeft: '45px',
           marginRight: '30px',
           gap: '20px',

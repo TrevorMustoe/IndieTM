@@ -15,6 +15,7 @@ a {
 
 * {
   box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
 }
 
 body {
@@ -58,7 +59,7 @@ body {
 }
 
 .sideLinks:hover{
-  background-color: black;
+  background-color: #273c4d;
 }
 
 .lines{
@@ -74,23 +75,35 @@ body {
 .venueHospWrap{
 display: flex;
 flex-direction: row;
-border: red solid 5px;
 width: 100%;
-justify-content: space-around;
+justify-content: center;
+margin-bottom: 20px;
 }
 
 .venueWrap{
-  width: 50%;
+  width: 20em;
   display: flex;
   flex-direction: column;
-  border: purple solid 3px;
   text-align: center;
+  background-color: #212529;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 2px;
 }
 
 .hospWrap{
-  width: 50%;
+  width: 20em;
   display: flex;
   flex-direction: column;
-  border: purple solid 3px;
   text-align: center;
+  background-color: #212529;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 2px;
+}
+
+.table{
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #212529;
 }

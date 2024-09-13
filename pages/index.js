@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button, Image } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 
 function Home() {
@@ -9,11 +9,11 @@ function Home() {
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
     >
-      <Image src="/IndieLogo2.png" height={200} width={200} style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '120px' }} />
       <div style={{
         padding: '5px',
         maxWidth: '400px',
         margin: '0 auto',
+        marginTop: '200px',
       }}
       >
         <div style={{
@@ -31,7 +31,7 @@ function Home() {
             </Link>
             <Link href="/showFullTour" passHref>
               <Button variant="light" size="lg">
-                View Full Tour
+                View All Tours
               </Button>
             </Link>
           </div>

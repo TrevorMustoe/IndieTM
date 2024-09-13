@@ -20,7 +20,7 @@ export default function ViewDate() {
 
   return (
     <div style={{
-      marginBottom: '30px',
+      marginBottom: '20px',
       width: '100%',
       display: 'flex',
       flexDirection: 'column',
@@ -28,20 +28,20 @@ export default function ViewDate() {
     }}
     >
       <div style={{
-        marginTop: '110px',
-        marginBottom: '0px',
-        width: '100%',
+        marginTop: '100px',
+        width: '60%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        background: '#212529',
+        borderRadius: '10px',
+        padding: '10px',
       }}
       >
-        <h1 style={{ fontWeight: 'bold', color: 'black' }}>{dateDetails.date}, {dateDetails.city}</h1>
-        <h2 style={{ fontWeight: 'bold', color: 'black' }}>{dateDetails.city}, {dateDetails.state}</h2>
+        <h2 style={{ color: 'white' }}>{dateDetails.date}</h2>
+        <h4 style={{ color: 'white' }}>{dateDetails.city}, {dateDetails.state}</h4>
       </div>
       <div style={{
-        marginTop: '10px',
-        marginBottom: '20px',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -51,47 +51,55 @@ export default function ViewDate() {
       >
         <div className="venueHospWrap">
           <div className="venueWrap">
-            <h1 style={{ color: 'black' }}>Venue</h1>
-            <h3 style={{ color: 'black' }}>{dateDetails.venueName}</h3>
-            <p style={{ color: 'black' }}>{dateDetails.venueAddress}</p>
+            <h3 style={{ color: 'white', fontWeight: 'bold' }}>Venue</h3>
+            <hr />
+            <p style={{ color: 'white' }}>{dateDetails.venueName}</p>
+            <p style={{ color: 'white' }}>{dateDetails.venueAddress}</p>
           </div>
           <div className="hospWrap">
-            <h1 style={{ color: 'black' }}>Hospitality</h1>
-            <h3 style={{ color: 'black' }}>{dateDetails.hospitalityName}</h3>
+            <h3 style={{ color: 'white', fontWeight: 'bold' }}>Hospitality</h3>
+            <hr />
+            <hp style={{ color: 'white' }}>{dateDetails.hospitalityName}</hp>
           </div>
         </div>
 
-        <h3 style={{ color: 'black' }}>Run Of Show</h3>
         <div style={{
           marginTop: '5px',
-          width: '50%',
-          marginBottom: '0px',
+          width: '60%',
         }}
         >
-          <Table bordered size="sm" variant="dark">
-            <tbody>
-              <tr>
-                <td>Load In:</td>
-                <td>{dateDetails.loadinTime}</td>
-              </tr>
-              <tr>
-                <td>Sound Check:</td>
-                <td>{dateDetails.soundCheck}</td>
-              </tr>
-              <tr>
-                <td>Doors:</td>
-                <td>{dateDetails.doorTime}</td>
-              </tr>
-              <tr>
-                <td>Set Time:</td>
-                <td>{dateDetails.setTime}</td>
-              </tr>
-              <tr>
-                <td>Load Out Time:</td>
-                <td>{dateDetails.loadoutTime}</td>
-              </tr>
-            </tbody>
-          </Table>
+          <div className="table">
+            <h3 style={{
+              color: 'white', fontWeight: 'bold', textAlign: 'center', padding: '5px',
+            }}
+            >Run Of Show
+            </h3>
+            <hr />
+            <Table size="lg" variant="dark">
+              <tbody>
+                <tr>
+                  <td>Load In:</td>
+                  <td>{dateDetails.loadinTime}</td>
+                </tr>
+                <tr>
+                  <td>Sound Check:</td>
+                  <td>{dateDetails.soundCheck}</td>
+                </tr>
+                <tr>
+                  <td>Doors:</td>
+                  <td>{dateDetails.doorTime}</td>
+                </tr>
+                <tr>
+                  <td>Set Time:</td>
+                  <td>{dateDetails.setTime}</td>
+                </tr>
+                <tr>
+                  <td>Load Out Time:</td>
+                  <td>{dateDetails.loadoutTime}</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
         </div>
       </div>
       <div style={{
@@ -101,9 +109,8 @@ export default function ViewDate() {
         <Link href={`/dates/edit/${dateDetails.firebaseKey}`} passHref>
           <Button
             style={{
-              marginRight: '10px', marginLeft: '10px', paddingLeft: '50px', paddingRight: '50px',
+              marginRight: '10px', marginLeft: '10px', paddingLeft: '50px', paddingRight: '50px', backgroundColor: '#212529', border: 'solid 0px black',
             }}
-            variant="success"
           >Edit
           </Button>
         </Link>

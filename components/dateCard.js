@@ -15,17 +15,24 @@ function DateCard({ dateObj }) {
     }
   };
   return (
-    <Card className="text-white" style={{ background: '#273c4d', borderRadius: '10px', width: '300px' }}>
+    <Card
+      className="text-white"
+      style={{
+        background: '#273c4d', borderRadius: '10px', width: '250px',
+      }}
+    >
       <Card.Header
         as="h5"
         style={{
           color: 'white', paddingTop: '20px', paddingBottom: '20px', fontWeight: '100',
         }}
-      >Date: {dateObj.date}
+      >{dateObj.date}
       </Card.Header>
       <Card.Body className="cardBody">
-        <Card.Title>Venue: {dateObj.venueName}</Card.Title>
+        <Card.Title>{dateObj.venueName}</Card.Title>
         <Card.Title style={{ color: 'white', fontWeight: '100' }}>{dateObj.city}</Card.Title>
+      </Card.Body>
+      <Card.Footer>
         <div style={{ justifyContent: 'space-between', marginTop: '30px' }}>
           <Link href={`/dates/${dateObj.firebaseKey}`} passHref>
             <Button
@@ -39,7 +46,7 @@ function DateCard({ dateObj }) {
           </Link>
           <Button size="sm" onClick={deleteThisDate} className="m-2" style={{ border: '0px' }} variant="danger">Delete Show</Button>
         </div>
-      </Card.Body>
+      </Card.Footer>
     </Card>
   );
 }
