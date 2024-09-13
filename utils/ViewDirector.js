@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import Link from 'next/link';
 import { useAuth } from './context/authContext';
 import Loading from '../components/Loading';
@@ -62,47 +62,54 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
               </Link>
 
               <div className="lines" />
-
-              <div style={{ display: 'flex', justifyContent: 'space-between' }} className="sideLinks">
-                <Button
-                  style={{
-                    marginRight: '20px', color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
-                  }}
-                  href="/showForm"
-                >Add Show
-                </Button>
-                <div className="iconhome">
-                  <Image
-                    src="/addshow.png"
-                    height={30}
-                    width={30}
-                    border="solid blue 5px"
-                  />
+              <Link href="/showForm">
+                <div style={{ display: 'flex', justifyContent: 'space-between' }} className="sideLinks">
+                  <Button
+                    style={{
+                      marginRight: '20px', color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
+                    }}
+                    href="/showForm"
+                  >Add Show
+                  </Button>
+                  <div className="iconhome">
+                    <Image
+                      src="/addshow.png"
+                      height={30}
+                      width={30}
+                      border="solid blue 5px"
+                    />
+                  </div>
                 </div>
-              </div>
+              </Link>
+
+              <div className="lines" />
+              <Link href="/showFullTour">
+                <div style={{ display: 'flex', justifyContent: 'space-between' }} className="sideLinks">
+                  <Button
+                    style={{
+                      marginRight: '20px', color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
+                    }}
+                    href="/showFullTour"
+                  >Tours
+                  </Button>
+                  <div className="iconhome">
+                    <Image
+                      src="/tourpic.png"
+                      height={30}
+                      width={30}
+                      border="solid blue 5px"
+                    />
+                  </div>
+                </div>
+              </Link>
 
               <div className="lines" />
 
-              <div style={{ display: 'flex', justifyContent: 'space-between' }} className="sideLinks">
-                <Button
-                  style={{
-                    marginRight: '20px', color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
-                  }}
-                  href="/showFullTour"
-                >Tours
-                </Button>
-                <div className="iconhome">
-                  <Image
-                    src="/tourpic.png"
-                    height={30}
-                    width={30}
-                    border="solid blue 5px"
-                  />
-                </div>
+              <div style={{ display: 'flex', justifyContent: 'space-evenly' }} className="sideLinks">
+                <h5>☀️</h5>
+                <Form.Switch />
+                <h5>🌙</h5>
               </div>
-
-              <div className="lines" />
-
             </div>
           </section>
           <main className="main">
