@@ -121,7 +121,6 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -146,7 +145,6 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -173,7 +171,6 @@ function AddShowForm({ obj }) {
                 height: '40px',
                 paddingLeft: '16px',
                 backgroundColor: 'white',
-
                 borderRadius: '10px',
                 border: 'solid white 2px',
               }}
@@ -199,7 +196,6 @@ function AddShowForm({ obj }) {
                 height: '40px',
                 paddingLeft: '16px',
                 backgroundColor: 'white',
-
                 borderRadius: '10px',
                 border: 'solid white 2px',
               }}
@@ -225,7 +221,6 @@ function AddShowForm({ obj }) {
                 height: '40px',
                 paddingLeft: '16px',
                 backgroundColor: 'white',
-
                 borderRadius: '10px',
                 border: 'solid white 2px',
               }}
@@ -249,7 +244,6 @@ function AddShowForm({ obj }) {
                 height: '40px',
                 paddingLeft: '16px',
                 backgroundColor: 'white',
-
                 borderRadius: '10px',
                 border: 'solid white 2px',
               }}
@@ -275,7 +269,6 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -300,7 +293,6 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -327,7 +319,6 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -352,7 +343,6 @@ function AddShowForm({ obj }) {
                   height: '40px',
                   paddingLeft: '16px',
                   backgroundColor: 'white',
-
                   borderRadius: '10px',
                   border: 'solid white 2px',
                 }}
@@ -385,7 +375,7 @@ function AddShowForm({ obj }) {
           </div>
           <Button
             style={{
-              margin: '10px', width: '40%', backgroundColor: '#212529', border: 'Solid 0px black',
+              margin: '10px', width: '40%', backgroundColor: 'var(--accent-color-1)', color: 'var(--button-color)', border: 'Solid 0px black',
             }}
             type="submit"
           >
