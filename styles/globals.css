@@ -2,20 +2,23 @@
 
 :root{
   --background-color: #bec3c8;
-  --accent-color-1: #bec3c8;
+  --accent-color-1: #212529;
   --accent-color-2: #273c4d;
+  --button-color: #bec3c8;
 }
 
 [data-theme='dark']{
   --background-color: #2a2f36;
   --accent-color-1: #bec3c8;
   --accent-color-2: #273c4d;
+  --button-color: #2a2f36;
 }
 
 [data-theme='light']{
   --background-color: #bec3c8;
   --accent-color-1: #212529;
   --accent-color-2: #273c4d;
+  --button-color: #bec3c8;
 }
 
 html,
