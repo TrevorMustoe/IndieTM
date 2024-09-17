@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { useRouter } from 'next/router';
 import { getSingleDate } from '../../api/datesData';
@@ -49,58 +48,65 @@ export default function ViewDate() {
         padding: '20px',
       }}
       >
-        <div className="venueHospWrap">
-          <div className="venueWrap">
-            <h3 style={{ color: 'white', fontWeight: 'bold' }}>Venue</h3>
-            <hr style={{ color: 'white' }} />
-            <h4 style={{ color: 'white' }}>{dateDetails.venueName}</h4>
-            <p style={{ color: 'white' }}>{dateDetails.venueAddress}</p>
+        <div className="venueHospTimeWrap">
+          <div className="venueHospWrap">
+            <div className="venueWrap">
+              <p style={{ color: 'white' }}>Venue</p>
+              <h5 style={{ color: 'white' }}>{dateDetails.venueName}</h5>
+              <hr style={{ color: 'white' }} />
+              <p style={{ color: 'white' }}>{dateDetails.venueAddress}</p>
+            </div>
+            <div className="hospWrap">
+              <p style={{ color: 'white' }}>Hospitality</p>
+              <h5 style={{ color: 'white' }}>{dateDetails.hospitalityName}</h5>
+              <hr style={{ color: 'white' }} />
+              <p style={{ color: 'white' }}>{dateDetails.hospitalityAddy}</p>
+            </div>
           </div>
-          <div className="hospWrap">
-            <h3 style={{ color: 'white', fontWeight: 'bold' }}>Hospitality</h3>
-            <hr style={{ color: 'white' }} />
-            <h4 style={{ color: 'white' }}>{dateDetails.hospitalityName}</h4>
-            <p style={{ color: 'white' }}>{dateDetails.hospitalityAddy}</p>
+
+          <div style={{
+            marginTop: '5px',
+            width: '40%',
+          }}
+          >
+            <div className="table">
+              <h5 style={{
+                color: 'white', fontWeight: 'bold', textAlign: 'center', padding: '5px',
+              }}
+              >Run Of Show
+              </h5>
+              <hr style={{ color: 'white' }} />
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Load In:</td>
+                    <td>{dateDetails.loadinTime}</td>
+                  </tr>
+                  <tr>
+                    <td>Sound Check:</td>
+                    <td>{dateDetails.soundCheck}</td>
+                  </tr>
+                  <tr>
+                    <td>Doors:</td>
+                    <td>{dateDetails.doorTime}</td>
+                  </tr>
+                  <tr>
+                    <td>Set Time:</td>
+                    <td>{dateDetails.setTime}</td>
+                  </tr>
+                  <tr>
+                    <td>Load Out Time:</td>
+                    <td>{dateDetails.loadoutTime}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-
-        <div style={{
-          marginTop: '5px',
-          width: '60%',
-        }}
-        >
-          <div className="table">
-            <h3 style={{
-              color: 'white', fontWeight: 'bold', textAlign: 'center', padding: '5px',
-            }}
-            >Run Of Show
-            </h3>
-            <hr style={{ color: 'white' }} />
-            <Table size="lg" variant="dark">
-              <tbody>
-                <tr>
-                  <td>Load In:</td>
-                  <td>{dateDetails.loadinTime}</td>
-                </tr>
-                <tr>
-                  <td>Sound Check:</td>
-                  <td>{dateDetails.soundCheck}</td>
-                </tr>
-                <tr>
-                  <td>Doors:</td>
-                  <td>{dateDetails.doorTime}</td>
-                </tr>
-                <tr>
-                  <td>Set Time:</td>
-                  <td>{dateDetails.setTime}</td>
-                </tr>
-                <tr>
-                  <td>Load Out Time:</td>
-                  <td>{dateDetails.loadoutTime}</td>
-                </tr>
-              </tbody>
-            </Table>
-          </div>
+        <div className="showNotes">
+          <p>Notes</p>
+          <hr style={{ color: 'var(--background-color)' }} />
+          <p>{dateDetails.showNotes}</p>
         </div>
       </div>
       <div style={{

@@ -10,7 +10,7 @@ function DateCard({ dateObj }) {
   const deleteThisDate = () => {
     if (window.confirm(`Delete ${dateObj.date}?`)) {
       deleteDates(dateObj.firebaseKey).then(() => {
-        router.push('/showFullTour');
+        router.reload();
       });
     }
   };

@@ -92,12 +92,20 @@ body {
   margin-right: 10px;
 }
 
-.venueHospWrap{
-display: flex;
+.venueHospTimeWrap{
+  display: flex;
 flex-direction: row;
 width: 100%;
 justify-content: center;
-margin-bottom: 20px;
+margin-bottom: 0px;
+align-items: center;
+}
+
+.venueHospWrap{
+display: flex;
+flex-direction: column;
+margin-right: 10px;
+margin-bottom: 10px;
 }
 
 .venueWrap{
@@ -108,7 +116,8 @@ margin-bottom: 20px;
   background-color: #212529;
   padding: 10px;
   border-radius: 10px;
-  margin-right: 2px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .hospWrap{
@@ -120,10 +129,54 @@ margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
   margin-left: 2px;
+  padding: 10px;
+}
+
+.locations{
+  background-color: var(--accent-color-1);
+  color: var(--button-color);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.tourAndDate{
+  background-color: var(--accent-color-1);
+  color: var(--button-color);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.times{
+  background-color: var(--accent-color-1);
+  color: var(--button-color);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 10px;
 }
 
 .table{
   border-radius: 10px;
   padding: 5px;
   background-color: #212529;
+  height: 100%;
+  padding: 50px;
+}
+
+tr td {
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #212529;
+  color: white;
+  width: 100%;
+}
+
+.showNotes{
+  background-color: var(--accent-color-1);
+  color: var(--background-color);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  width: 75%;
 }
