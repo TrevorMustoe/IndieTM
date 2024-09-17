@@ -23,6 +23,9 @@ function ShowFullTour() {
     >
       <h5 style={{ color: 'var(--accent-color-1)', marginBottom: '20px' }}>Please select a tour below:</h5>
       <TourPickerForm onSelectTour={handleSelectTour} />
+      <div>
+        <h2 style={{ color: '--accent-color-1' }}>Total Tour Dates: {dates.length > 0 ? dates.length : '' }</h2>
+      </div>
       <div
         style={{
           display: 'flex',
