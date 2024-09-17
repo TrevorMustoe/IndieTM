@@ -21,6 +21,7 @@ const initialState = {
   loadoutTime: '',
   venueAddress: '',
 };
+
 // setting ititial state of each of these from inputs to empty strings
 
 function AddShowForm({ obj }) {
@@ -110,7 +111,7 @@ function AddShowForm({ obj }) {
             >
               <label htmlFor="date">Enter Date:</label>
               <input
-                type="text"
+                type="date"
                 placeholder="Enter Date"
                 name="date"
                 value={formInput.date}
@@ -258,7 +259,7 @@ function AddShowForm({ obj }) {
             >
               <label htmlFor="loadinTime">Load In:</label>
               <input
-                type="text"
+                type="time"
                 placeholder="Load In"
                 name="loadinTime"
                 value={formInput.loadinTime}
@@ -282,7 +283,7 @@ function AddShowForm({ obj }) {
             >
               <label htmlFor="soundCheck">Sound Check:</label>
               <input
-                type="text"
+                type="time"
                 placeholder="Sound Check"
                 name="soundCheck"
                 value={formInput.soundCheck}
@@ -308,7 +309,7 @@ function AddShowForm({ obj }) {
             >
               <label htmlFor="doorTime">Door Time:</label>
               <input
-                type="text"
+                type="time"
                 placeholder="Door Time"
                 name="doorTime"
                 value={formInput.doorTime}
@@ -332,7 +333,7 @@ function AddShowForm({ obj }) {
             >
               <label htmlFor="setTime">Set Time:</label>
               <input
-                type="text"
+                type="time"
                 placeholder="Set Time"
                 name="setTime"
                 value={formInput.setTime}
@@ -357,7 +358,7 @@ function AddShowForm({ obj }) {
           >
             <label htmlFor="loudoutTime">Load Out Time:</label>
             <input
-              type="text"
+              type="time"
               placeholder="Load Out"
               name="loadoutTime"
               value={formInput.loadoutTime}
@@ -400,6 +401,7 @@ AddShowForm.propTypes = {
     city: PropTypes.string,
     doorTime: PropTypes.string,
     hospitalityName: PropTypes.string,
+    hospitalityAddy: PropTypes.string,
     venueName: PropTypes.string,
     loadinTime: PropTypes.string,
     setTime: PropTypes.string,

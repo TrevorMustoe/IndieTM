@@ -106,14 +106,6 @@ export default function ViewDate() {
         display: 'flex', justifyContent: 'space-between',
       }}
       >
-        <Link href={`/dates/edit/${dateDetails.firebaseKey}`} passHref>
-          <Button
-            style={{
-              marginRight: '10px', marginLeft: '10px', paddingLeft: '50px', paddingRight: '50px', backgroundColor: '#212529', border: 'solid 0px black',
-            }}
-          >Edit
-          </Button>
-        </Link>
         <Link href="/showFullTour" passHref>
           <Button
             style={{
@@ -121,6 +113,14 @@ export default function ViewDate() {
             }}
             variant="danger"
           >Back
+          </Button>
+        </Link>
+        <Link href={`/dates/edit/${dateDetails.firebaseKey}`} passHref>
+          <Button
+            style={{
+              marginRight: '10px', marginLeft: '10px', paddingLeft: '50px', paddingRight: '50px', backgroundColor: '#212529', border: 'solid 0px black',
+            }}
+          >Edit
           </Button>
         </Link>
       </div>
