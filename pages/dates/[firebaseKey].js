@@ -53,13 +53,14 @@ export default function ViewDate() {
           <div className="venueWrap">
             <h3 style={{ color: 'white', fontWeight: 'bold' }}>Venue</h3>
             <hr style={{ color: 'white' }} />
-            <p style={{ color: 'white' }}>{dateDetails.venueName}</p>
+            <h4 style={{ color: 'white' }}>{dateDetails.venueName}</h4>
             <p style={{ color: 'white' }}>{dateDetails.venueAddress}</p>
           </div>
           <div className="hospWrap">
             <h3 style={{ color: 'white', fontWeight: 'bold' }}>Hospitality</h3>
             <hr style={{ color: 'white' }} />
-            <hp style={{ color: 'white' }}>{dateDetails.hospitalityName}</hp>
+            <h4 style={{ color: 'white' }}>{dateDetails.hospitalityName}</h4>
+            <p style={{ color: 'white' }}>{dateDetails.hospitalityAddy}</p>
           </div>
         </div>
 
