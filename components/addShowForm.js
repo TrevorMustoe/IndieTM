@@ -14,6 +14,7 @@ const initialState = {
   city: '',
   doorTime: '',
   hospitalityName: '',
+  hospitalityAddy: '',
   venueName: '',
   loadinTime: '',
   setTime: '',
@@ -249,7 +250,29 @@ function AddShowForm({ obj }) {
                 border: 'solid white 2px',
               }}
             />
+          </div>
 
+          <div style={{
+            flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+          }}
+          >
+            <label htmlFor="hospitalityAddy">Hotel Address</label>
+            <input
+              type="text"
+              placeholder="Enter Hospitality Address"
+              name="hospitalityAddy"
+              value={formInput.hospitalityAddy}
+              onChange={handleChange}
+              required
+              style={{
+                width: '100%',
+                height: '40px',
+                paddingLeft: '16px',
+                backgroundColor: 'white',
+                borderRadius: '10px',
+                border: 'solid white 2px',
+              }}
+            />
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
