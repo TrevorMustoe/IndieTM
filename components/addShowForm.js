@@ -78,12 +78,11 @@ function AddShowForm({ obj }) {
   };
   return (
     <div style={{ margin: '20px', color: 'var(--accent-color-1)' }}>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <div
           style={{
             display: 'flex', flexDirection: 'row', alignItems: 'flex-end',
           }}
-          onSubmit={handleSubmit}
           className="noNotes"
         >
           <div>
@@ -413,7 +412,7 @@ function AddShowForm({ obj }) {
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Show Notes</Form.Label>
             <Form.Control
-              value={formInput.notes}
+              value={formInput.showNotes}
               onChange={handleChange}
               name="showNotes"
               as="textarea"
