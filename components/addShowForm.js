@@ -78,361 +78,364 @@ function AddShowForm({ obj }) {
   };
   return (
     <div style={{ margin: '20px', color: 'var(--accent-color-1)' }}>
-      <Form
-        style={{
-          display: 'flex', flexDirection: 'row', alignItems: 'flex-end',
+      <Form>
+        <div
+          style={{
+            display: 'flex', flexDirection: 'row', alignItems: 'flex-end',
+          }}
+          onSubmit={handleSubmit}
+          className="noNotes"
+        >
+          <div>
+            <h2 style={{ textAlign: 'center' }} className="mt-5">{obj.firebaseKey ? 'Update' : 'Create New'} Date</h2>
+            <div className="tourAndDate">
+              <FloatingLabel
+                controlId="floatingSelect"
+                label="Tours"
+              >
+                <Form.Select
+                  aria-label="Toursssss"
+                  name="tourID"
+                  onChange={handleChange}
+                  className="mb-3"
+                  value={formInput.tourID}
+                  required
+                >
+                  <option value="">Select a Tour</option>
+                  {tours.map((tour) => (
+                    <option key={tour.firebaseKey} value={tour.firebaseKey}>
+                      {tour.name}
+                    </option>
+                  ))}
+                </Form.Select>
+              </FloatingLabel>
+              <div style={{
+                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+              }}
+              >
+                <label htmlFor="date">Enter Date:</label>
+                <input
+                  type="date"
+                  placeholder="Enter Date"
+                  name="date"
+                  value={formInput.date}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    width: '100%',
+                    height: '40px',
+                    paddingLeft: '16px',
+                    backgroundColor: 'white',
+                    borderRadius: '10px',
+                    border: 'solid white 2px',
+                  }}
+                />
+
+              </div>
+            </div>
+            <div className="times">
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{
+                  flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+                }}
+                >
+                  <label htmlFor="loadinTime">Load In:</label>
+                  <input
+                    type="time"
+                    placeholder="Load In"
+                    name="loadinTime"
+                    value={formInput.loadinTime}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      height: '40px',
+                      paddingLeft: '16px',
+                      backgroundColor: 'white',
+                      borderRadius: '10px',
+                      border: 'solid white 2px',
+                    }}
+                  />
+
+                </div>
+
+                <div style={{
+                  flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+                }}
+                >
+                  <label htmlFor="soundCheck">Sound Check:</label>
+                  <input
+                    type="time"
+                    placeholder="Sound Check"
+                    name="soundCheck"
+                    value={formInput.soundCheck}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      height: '40px',
+                      paddingLeft: '16px',
+                      backgroundColor: 'white',
+                      borderRadius: '10px',
+                      border: 'solid white 2px',
+                    }}
+                  />
+
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{
+                  flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+                }}
+                >
+                  <label htmlFor="doorTime">Door Time:</label>
+                  <input
+                    type="time"
+                    placeholder="Door Time"
+                    name="doorTime"
+                    value={formInput.doorTime}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      height: '40px',
+                      paddingLeft: '16px',
+                      backgroundColor: 'white',
+                      borderRadius: '10px',
+                      border: 'solid white 2px',
+                    }}
+                  />
+
+                </div>
+
+                <div style={{
+                  flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+                }}
+                >
+                  <label htmlFor="setTime">Set Time:</label>
+                  <input
+                    type="time"
+                    placeholder="Set Time"
+                    name="setTime"
+                    value={formInput.setTime}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      height: '40px',
+                      paddingLeft: '16px',
+                      backgroundColor: 'white',
+                      borderRadius: '10px',
+                      border: 'solid white 2px',
+                    }}
+                  />
+
+                </div>
+              </div>
+
+              <div style={{
+                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+              }}
+              >
+                <label htmlFor="loudoutTime">Load Out Time:</label>
+                <input
+                  type="time"
+                  placeholder="Load Out"
+                  name="loadoutTime"
+                  value={formInput.loadoutTime}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    width: '100%',
+                    height: '40px',
+                    paddingLeft: '16px',
+                    backgroundColor: 'white',
+                    borderRadius: '10px',
+                    border: 'solid white 2px',
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="locations">
+              <div style={{
+                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+              }}
+              >
+                <label htmlFor="state">Enter State:</label>
+                <input
+                  type="text"
+                  placeholder="Enter State"
+                  name="state"
+                  value={formInput.state}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    width: '100%',
+                    height: '40px',
+                    paddingLeft: '16px',
+                    backgroundColor: 'white',
+                    borderRadius: '10px',
+                    border: 'solid white 2px',
+                  }}
+                />
+
+              </div>
+
+              <div style={{
+                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+              }}
+              >
+                <label htmlFor="city">City Name:</label>
+                <input
+                  type="text"
+                  placeholder="Enter City"
+                  name="city"
+                  value={formInput.city}
+                  onChange={handleChange}
+                  className="forminputs"
+                  required
+                  style={{
+                    width: '100%',
+                    height: '40px',
+                    paddingLeft: '16px',
+                    backgroundColor: 'white',
+                    borderRadius: '10px',
+                    border: 'solid white 2px',
+                  }}
+                />
+
+              </div>
+
+              <div style={{
+                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+              }}
+              >
+
+                <label htmlFor="venueName">Venue Name:</label>
+                <input
+                  type="text"
+                  placeholder="Enter Venue Name"
+                  name="venueName"
+                  value={formInput.venueName}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    width: '100%',
+                    height: '40px',
+                    paddingLeft: '16px',
+                    backgroundColor: 'white',
+                    borderRadius: '10px',
+                    border: 'solid white 2px',
+                  }}
+                />
+
+              </div>
+
+              <div style={{
+                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+              }}
+              >
+
+                <label htmlFor="venueAddress">Venue Address:</label>
+                <input
+                  type="text"
+                  placeholder="Enter Venue Address"
+                  name="venueAddress"
+                  value={formInput.venueAddress}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    width: '100%',
+                    height: '40px',
+                    paddingLeft: '16px',
+                    backgroundColor: 'white',
+                    borderRadius: '10px',
+                    border: 'solid white 2px',
+                  }}
+                />
+
+              </div>
+              <div style={{
+                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+              }}
+              >
+                <label htmlFor="hospitalityName">Hotel Name:</label>
+                <input
+                  type="text"
+                  placeholder="Enter Hospitality Name"
+                  name="hospitalityName"
+                  value={formInput.hospitalityName}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    width: '100%',
+                    height: '40px',
+                    paddingLeft: '16px',
+                    backgroundColor: 'white',
+                    borderRadius: '10px',
+                    border: 'solid white 2px',
+                  }}
+                />
+              </div>
+
+              <div style={{
+                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+              }}
+              >
+                <label htmlFor="hospitalityAddy">Hotel Address</label>
+                <input
+                  type="text"
+                  placeholder="Enter Hospitality Address"
+                  name="hospitalityAddy"
+                  value={formInput.hospitalityAddy}
+                  onChange={handleChange}
+                  required
+                  style={{
+                    width: '100%',
+                    height: '40px',
+                    paddingLeft: '16px',
+                    backgroundColor: 'white',
+                    borderRadius: '10px',
+                    border: 'solid white 2px',
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style={{
+          backgroundColor: 'var(--accent-color-1)', color: 'var(--button-color)', padding: '30px', margin: '10px', borderRadius: '10px',
         }}
-        onSubmit={handleSubmit}
-      >
-        <div>
-          <h2 style={{ textAlign: 'center' }} className="mt-5">{obj.firebaseKey ? 'Update' : 'Create New'} Date</h2>
-          <div className="tourAndDate">
-            <FloatingLabel
-              controlId="floatingSelect"
-              label="Tours"
-            >
-              <Form.Select
-                aria-label="Toursssss"
-                name="tourID"
-                onChange={handleChange}
-                className="mb-3"
-                value={formInput.tourID}
-                required
-              >
-                <option value="">Select a Tour</option>
-                {tours.map((tour) => (
-                  <option key={tour.firebaseKey} value={tour.firebaseKey}>
-                    {tour.name}
-                  </option>
-                ))}
-              </Form.Select>
-            </FloatingLabel>
-            <div style={{
-              flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-            }}
-            >
-              <label htmlFor="date">Enter Date:</label>
-              <input
-                type="date"
-                placeholder="Enter Date"
-                name="date"
-                value={formInput.date}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  height: '40px',
-                  paddingLeft: '16px',
-                  backgroundColor: 'white',
-                  borderRadius: '10px',
-                  border: 'solid white 2px',
-                }}
-              />
-
-            </div>
-          </div>
-          <div className="times">
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <div style={{
-                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-              }}
-              >
-                <label htmlFor="loadinTime">Load In:</label>
-                <input
-                  type="time"
-                  placeholder="Load In"
-                  name="loadinTime"
-                  value={formInput.loadinTime}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    height: '40px',
-                    paddingLeft: '16px',
-                    backgroundColor: 'white',
-                    borderRadius: '10px',
-                    border: 'solid white 2px',
-                  }}
-                />
-
-              </div>
-
-              <div style={{
-                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-              }}
-              >
-                <label htmlFor="soundCheck">Sound Check:</label>
-                <input
-                  type="time"
-                  placeholder="Sound Check"
-                  name="soundCheck"
-                  value={formInput.soundCheck}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    height: '40px',
-                    paddingLeft: '16px',
-                    backgroundColor: 'white',
-                    borderRadius: '10px',
-                    border: 'solid white 2px',
-                  }}
-                />
-
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <div style={{
-                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-              }}
-              >
-                <label htmlFor="doorTime">Door Time:</label>
-                <input
-                  type="time"
-                  placeholder="Door Time"
-                  name="doorTime"
-                  value={formInput.doorTime}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    height: '40px',
-                    paddingLeft: '16px',
-                    backgroundColor: 'white',
-                    borderRadius: '10px',
-                    border: 'solid white 2px',
-                  }}
-                />
-
-              </div>
-
-              <div style={{
-                flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-              }}
-              >
-                <label htmlFor="setTime">Set Time:</label>
-                <input
-                  type="time"
-                  placeholder="Set Time"
-                  name="setTime"
-                  value={formInput.setTime}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    height: '40px',
-                    paddingLeft: '16px',
-                    backgroundColor: 'white',
-                    borderRadius: '10px',
-                    border: 'solid white 2px',
-                  }}
-                />
-
-              </div>
-            </div>
-
-            <div style={{
-              flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-            }}
-            >
-              <label htmlFor="loudoutTime">Load Out Time:</label>
-              <input
-                type="time"
-                placeholder="Load Out"
-                name="loadoutTime"
-                value={formInput.loadoutTime}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  height: '40px',
-                  paddingLeft: '16px',
-                  backgroundColor: 'white',
-                  borderRadius: '10px',
-                  border: 'solid white 2px',
-                }}
-              />
-            </div>
-          </div>
+        >
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Show Notes</Form.Label>
+            <Form.Control
+              value={formInput.notes}
+              onChange={handleChange}
+              name="showNotes"
+              as="textarea"
+              placeholder="Show Notes"
+              rows={3}
+            />
+          </Form.Group>
         </div>
-        <div>
-          <div className="locations">
-            <div style={{
-              flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-            }}
-            >
-              <label htmlFor="state">Enter State:</label>
-              <input
-                type="text"
-                placeholder="Enter State"
-                name="state"
-                value={formInput.state}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  height: '40px',
-                  paddingLeft: '16px',
-                  backgroundColor: 'white',
-                  borderRadius: '10px',
-                  border: 'solid white 2px',
-                }}
-              />
-
-            </div>
-
-            <div style={{
-              flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-            }}
-            >
-              <label htmlFor="city">City Name:</label>
-              <input
-                type="text"
-                placeholder="Enter City"
-                name="city"
-                value={formInput.city}
-                onChange={handleChange}
-                className="forminputs"
-                required
-                style={{
-                  width: '100%',
-                  height: '40px',
-                  paddingLeft: '16px',
-                  backgroundColor: 'white',
-                  borderRadius: '10px',
-                  border: 'solid white 2px',
-                }}
-              />
-
-            </div>
-
-            <div style={{
-              flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-            }}
-            >
-
-              <label htmlFor="venueName">Venue Name:</label>
-              <input
-                type="text"
-                placeholder="Enter Venue Name"
-                name="venueName"
-                value={formInput.venueName}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  height: '40px',
-                  paddingLeft: '16px',
-                  backgroundColor: 'white',
-                  borderRadius: '10px',
-                  border: 'solid white 2px',
-                }}
-              />
-
-            </div>
-
-            <div style={{
-              flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-            }}
-            >
-
-              <label htmlFor="venueAddress">Venue Address:</label>
-              <input
-                type="text"
-                placeholder="Enter Venue Address"
-                name="venueAddress"
-                value={formInput.venueAddress}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  height: '40px',
-                  paddingLeft: '16px',
-                  backgroundColor: 'white',
-                  borderRadius: '10px',
-                  border: 'solid white 2px',
-                }}
-              />
-
-            </div>
-            <div style={{
-              flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-            }}
-            >
-              <label htmlFor="hospitalityName">Hotel Name:</label>
-              <input
-                type="text"
-                placeholder="Enter Hospitality Name"
-                name="hospitalityName"
-                value={formInput.hospitalityName}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  height: '40px',
-                  paddingLeft: '16px',
-                  backgroundColor: 'white',
-                  borderRadius: '10px',
-                  border: 'solid white 2px',
-                }}
-              />
-            </div>
-
-            <div style={{
-              flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-            }}
-            >
-              <label htmlFor="hospitalityAddy">Hotel Address</label>
-              <input
-                type="text"
-                placeholder="Enter Hospitality Address"
-                name="hospitalityAddy"
-                value={formInput.hospitalityAddy}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  height: '40px',
-                  paddingLeft: '16px',
-                  backgroundColor: 'white',
-                  borderRadius: '10px',
-                  border: 'solid white 2px',
-                }}
-              />
-            </div>
-          </div>
-        </div>
+        <Button
+          style={{
+            margin: '10px', width: '40%', backgroundColor: 'var(--accent-color-1)', color: 'var(--button-color)', border: 'Solid 0px black',
+          }}
+          type="submit"
+        >
+          Submit
+        </Button>
+        {obj.firebaseKey && (
+          <Link href={`/dates/${obj.firebaseKey}`} passHref>
+            <Button variant="danger" className="m-2">Go Back</Button>
+          </Link>
+        )}
       </Form>
-      <div style={{
-        backgroundColor: 'var(--accent-color-1)', color: 'var(--button-color)', padding: '30px', margin: '10px', borderRadius: '10px',
-      }}
-      >
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Show Notes</Form.Label>
-          <Form.Control
-            value={formInput.notes}
-            onChange={handleChange}
-            name="showNotes"
-            as="textarea"
-            placeholder="Show Notes"
-            rows={3}
-          />
-        </Form.Group>
-      </div>
-      <Button
-        style={{
-          margin: '10px', width: '40%', backgroundColor: 'var(--accent-color-1)', color: 'var(--button-color)', border: 'Solid 0px black',
-        }}
-        type="submit"
-      >
-        Submit
-      </Button>
-      {obj.firebaseKey && (
-      <Link href={`/dates/${obj.firebaseKey}`} passHref>
-        <Button variant="danger" className="m-2">Go Back</Button>
-      </Link>
-      )}
     </div>
   );
 }
