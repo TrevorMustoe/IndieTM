@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
-import { FloatingLabel, Form } from 'react-bootstrap';
+import {
+  FloatingLabel, Form,
+} from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 import { getTours } from '../api/tourData';
 import { getDatesByTourId } from '../api/datesData';
@@ -51,32 +53,48 @@ function TourPickerForm({ obj, onSelectTour }) {
   };
 
   return (
-    <Form>
-      <div>
-        <FloatingLabel controlId="floatingSelect" label="Tours">
-          <Form.Select
-            aria-label="Tours"
-            name="id"
-            onChange={handleChange}
+    // <div>
+    //   <div style={{ display: 'flex', marginBottom: '20px', justifyItems: 'space-ar' }}>
+    //     {tours.map((tour) => (
+    //       <Card style={{ width: '18rem' }}>
+    //         <Card.Body>
+    //           <Card.Body key={tour.firebaseKey} value={tour.firebaseKey}>
+    //             {tour.name}
+    //             {/* display the name and setting value to each tour returned from the tour array */}
+    //           </Card.Body>
+    //           <Button variant="primary">Go somewhere</Button>
+    //         </Card.Body>
+    //       </Card>
+    //     ))}
+    //   </div>
+    <div>
+      <Form>
+        <div>
+          <FloatingLabel controlId="floatingSelect" label="Tours">
+            <Form.Select
+              aria-label="Tours"
+              name="id"
+              onChange={handleChange}
             // attatching the handleChange function the when change happens to this input
-            className="mb-3"
-            value={formInput.id}
+              className="mb-3"
+              value={formInput.id}
             // making sure that the current selection displays the id state of fromInput
-            required
-          >
-            <option value="">Select a Tour</option>
-            {/* setting the default value of option selected to an empty string */}
-            {tours.map((tour) => (
+              required
+            >
+              <option value="">Select a Tour</option>
+              {/* setting the default value of option selected to an empty string */}
+              {tours.map((tour) => (
               // maps through the tour array to return and display all of the tours in our database
-              <option key={tour.firebaseKey} value={tour.firebaseKey}>
-                {tour.name}
-                {/* display the name and setting value to each tour returned from the tour array */}
-              </option>
-            ))}
-          </Form.Select>
-        </FloatingLabel>
-      </div>
-    </Form>
+                <option key={tour.firebaseKey} value={tour.firebaseKey}>
+                  {tour.name}
+                  {/* display the name and setting value to each tour returned from the tour array */}
+                </option>
+              ))}
+            </Form.Select>
+          </FloatingLabel>
+        </div>
+      </Form>
+    </div>
   );
 }
 
