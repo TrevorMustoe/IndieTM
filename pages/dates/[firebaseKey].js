@@ -28,7 +28,7 @@ export default function ViewDate() {
     >
       <div style={{
         marginTop: '100px',
-        width: '60%',
+        width: '70%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -45,7 +45,7 @@ export default function ViewDate() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: '20px',
+        marginTop: '10px',
       }}
       >
         <div className="venueHospTimeWrap">
