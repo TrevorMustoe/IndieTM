@@ -32,7 +32,7 @@ export default function ViewDate() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        background: '#212529',
+        background: 'var(--accent-color-2)',
         borderRadius: '10px',
         padding: '10px',
       }}

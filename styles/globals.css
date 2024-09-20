@@ -5,6 +5,7 @@
   --accent-color-1: #212529;
   --accent-color-2: #273c4d;
   --button-color: #bec3c8;
+  --form-text: #ffffff;
 }
 
 [data-theme='dark']{
@@ -113,7 +114,7 @@ margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #212529;
+  background-color: var(--accent-color-2);
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -125,7 +126,7 @@ margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #212529;
+  background-color: var(--accent-color-2);
   padding: 10px;
   border-radius: 10px;
   margin-left: 2px;
@@ -133,33 +134,54 @@ margin-bottom: 10px;
 }
 
 .locations{
-  background-color: var(--accent-color-1);
-  color: var(--button-color);
+  background-color: var(--accent-color-2);
+  color: var(--form-text);
   padding: 30px;
   border-radius: 10px;
   margin: 10px;
 }
 
 .tourAndDate{
-  background-color: var(--accent-color-1);
-  color: var(--button-color);
+  background-color: var(--accent-color-2);
+  color: var(--form-text);
   padding: 30px;
   border-radius: 10px;
   margin: 10px;
 }
 
 .times{
-  background-color: var(--accent-color-1);
-  color: var(--button-color);
+  background-color: var(--accent-color-2);
+  color: var(--form-text);
   padding: 30px;
   border-radius: 10px;
   margin: 10px;
 }
 
+.updateCreate{
+  background-color: var(--accent-color-2);
+  color: var(--form-text);
+  align-items: baseline;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.tourPickerBox{
+  background-color: var(--accent-color-2);
+  color: var(--form-text);
+  align-items: baseline;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 60%;
+  margin-bottom: 40px;
+}
+
 .table{
   border-radius: 10px;
   padding: 5px;
-  background-color: #212529;
+  background-color: var(--accent-color-2);
   height: 100%;
   padding: 50px;
 }
@@ -167,14 +189,14 @@ margin-bottom: 10px;
 tr td {
   border-radius: 10px;
   padding: 5px;
-  background-color: #212529;
+  background-color: var(--accent-color-2);
   color: white;
   width: 100%;
 }
 
 .showNotes{
-  background-color: var(--accent-color-1);
-  color: var(--background-color);
+  background-color: var(--accent-color-2);
+  color: var(--form-text);
   padding: 30px;
   border-radius: 10px;
   margin: 10px;
