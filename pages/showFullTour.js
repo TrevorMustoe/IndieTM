@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { Button } from 'react-bootstrap';
 import DateCard from '../components/dateCard';
 import TourPickerForm from '../components/TourPickerForm';
 
@@ -21,10 +23,9 @@ function ShowFullTour() {
         alignContent: 'stretch',
       }}
     >
-      <h5 style={{ color: 'var(--accent-color-1)', marginBottom: '20px' }}>Please select a tour below:</h5>
-      <TourPickerForm onSelectTour={handleSelectTour} />
-      <div>
-        <h2 style={{ color: '--accent-color-1' }}>Total Tour Dates: {dates.length > 0 ? dates.length : '' }</h2>
+      <div className="tourPickerBox">
+        <h5>Please select a tour below:</h5>
+        <TourPickerForm onSelectTour={handleSelectTour} />
       </div>
       <div
         style={{
@@ -40,6 +41,12 @@ function ShowFullTour() {
           <DateCard key={dateObj.firebaseKey} dateObj={dateObj} />
         ))}
       </div>
+      <hr className="lines" style={{ marginTop: '40px' }} />
+      <Link href="/showForm" passHref>
+        <Button style={{ marginTop: '40px' }} variant="light" size="lg">
+          Add New Show
+        </Button>
+      </Link>
     </div>
   );
 }

@@ -79,6 +79,9 @@ function AddShowForm({ obj }) {
   return (
     <div style={{ margin: '20px', color: 'var(--accent-color-1)' }}>
       <Form onSubmit={handleSubmit}>
+        <div className="updateCreate">
+          <h2 style={{ textAlign: 'center', fontWeight: 'bold' }}>{obj.firebaseKey ? 'Edit' : 'Create New'} Show Date</h2>
+        </div>
         <div
           style={{
             display: 'flex', flexDirection: 'row', alignItems: 'flex-end',
@@ -86,7 +89,7 @@ function AddShowForm({ obj }) {
           className="noNotes"
         >
           <div>
-            <h2 style={{ textAlign: 'center' }} className="mt-5">{obj.firebaseKey ? 'Update' : 'Create New'} Date</h2>
+
             <div className="tourAndDate">
               <FloatingLabel
                 controlId="floatingSelect"
@@ -406,7 +409,7 @@ function AddShowForm({ obj }) {
           </div>
         </div>
         <div style={{
-          backgroundColor: 'var(--accent-color-1)', color: 'var(--button-color)', padding: '30px', margin: '10px', borderRadius: '10px',
+          backgroundColor: 'var(--accent-color-2)', color: 'var(--form-text)', padding: '30px', margin: '10px', borderRadius: '10px',
         }}
         >
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
@@ -427,7 +430,7 @@ function AddShowForm({ obj }) {
           }}
           type="submit"
         >
-          Submit
+          {obj.firebaseKey ? 'Save Changes' : 'Save'}
         </Button>
         {obj.firebaseKey && (
           <Link href={`/dates/${obj.firebaseKey}`} passHref>

@@ -53,20 +53,7 @@ function TourPickerForm({ obj, onSelectTour }) {
   };
 
   return (
-    // <div>
-    //   <div style={{ display: 'flex', marginBottom: '20px', justifyItems: 'space-ar' }}>
-    //     {tours.map((tour) => (
-    //       <Card style={{ width: '18rem' }}>
-    //         <Card.Body>
-    //           <Card.Body key={tour.firebaseKey} value={tour.firebaseKey}>
-    //             {tour.name}
-    //             {/* display the name and setting value to each tour returned from the tour array */}
-    //           </Card.Body>
-    //           <Button variant="primary">Go somewhere</Button>
-    //         </Card.Body>
-    //       </Card>
-    //     ))}
-    //   </div>
+
     <div>
       <Form>
         <div>
@@ -84,7 +71,7 @@ function TourPickerForm({ obj, onSelectTour }) {
               <option value="">Select a Tour</option>
               {/* setting the default value of option selected to an empty string */}
               {tours.map((tour) => (
-              // maps through the tour array to return and display all of the tours in our database
+                // maps through the tour array to return and display all of the tours in our database
                 <option key={tour.firebaseKey} value={tour.firebaseKey}>
                   {tour.name}
                   {/* display the name and setting value to each tour returned from the tour array */}
