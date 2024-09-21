@@ -8,7 +8,8 @@ function ShowFullTour() {
   const [dates, setDates] = useState([]);
 
   const handleSelectTour = (tourDates) => {
-    setDates(tourDates);
+    const sortedDates = tourDates.sort((a, b) => new Date(a.date) - new Date(b.date));
+    setDates(sortedDates);
   };
 
   return (
