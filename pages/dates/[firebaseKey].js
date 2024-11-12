@@ -14,120 +14,78 @@ export default function ViewDate() {
 
   // TODO: make call to API layer to get the data
   useEffect(() => {
-    getSingleDate(firebaseKey).then(setDateDetails);
+    if (firebaseKey) {
+      getSingleDate(firebaseKey).then(setDateDetails);
+    }
   }, [firebaseKey]);
 
   return (
-    <div style={{
-      marginBottom: '20px',
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    }}
-    >
-      <div style={{
-        marginTop: '100px',
-        width: '70%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        background: 'var(--accent-color-2)',
-        borderRadius: '10px',
-        padding: '10px',
-      }}
-      >
-        <h2 style={{ color: 'white' }}>{dateDetails.date}</h2>
-        <h4 style={{ color: 'white' }}>{dateDetails.city}, {dateDetails.state}</h4>
+    <div className="view-date-container">
+      <div className="header">
+        <h2>{dateDetails.date}</h2>
+        <h4>{dateDetails.city}, {dateDetails.state}</h4>
       </div>
-      <div style={{
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        marginTop: '10px',
-      }}
-      >
-        <div className="venueHospTimeWrap">
-          <div className="venueHospWrap">
-            <div className="venueWrap">
-              <p style={{ color: 'white' }}>Venue</p>
-              <h5 style={{ color: 'white' }}>{dateDetails.venueName}</h5>
-              <hr style={{ color: 'white' }} />
-              <p style={{ color: 'white' }}>{dateDetails.venueAddress}</p>
-            </div>
-            <div className="hospWrap">
-              <p style={{ color: 'white' }}>Hospitality</p>
-              <h5 style={{ color: 'white' }}>{dateDetails.hospitalityName}</h5>
-              <hr style={{ color: 'white' }} />
-              <p style={{ color: 'white' }}>{dateDetails.hospitalityAddy}</p>
-            </div>
-          </div>
 
-          <div style={{
-            marginTop: '5px',
-            width: '40%',
-          }}
-          >
-            <div className="table">
-              <h5 style={{
-                color: 'white', fontWeight: 'bold', textAlign: 'center', padding: '5px',
-              }}
-              >Run Of Show
-              </h5>
-              <hr style={{ color: 'white' }} />
-              <table>
-                <tbody>
-                  <tr>
-                    <td>Load In:</td>
-                    <td>{dateDetails.loadinTime}</td>
-                  </tr>
-                  <tr>
-                    <td>Sound Check:</td>
-                    <td>{dateDetails.soundCheck}</td>
-                  </tr>
-                  <tr>
-                    <td>Doors:</td>
-                    <td>{dateDetails.doorTime}</td>
-                  </tr>
-                  <tr>
-                    <td>Set Time:</td>
-                    <td>{dateDetails.setTime}</td>
-                  </tr>
-                  <tr>
-                    <td>Load Out Time:</td>
-                    <td>{dateDetails.loadoutTime}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+      <div className="venue-hospitality-info">
+        <div className="venue-info">
+          <p>Venue</p>
+          <h5>{dateDetails.venueName}</h5>
+          <hr />
+          <p>{dateDetails.venueAddress}</p>
         </div>
-        <div className="showNotes">
-          <p>Notes</p>
-          <hr style={{ color: 'var(--background-color)' }} />
-          <p>{dateDetails.showNotes}</p>
+
+        <div className="hospitality-info">
+          <p>Hospitality</p>
+          <h5>{dateDetails.hospitalityName}</h5>
+          <hr />
+          <p>{dateDetails.hospitalityAddy}</p>
         </div>
       </div>
-      <div style={{
-        display: 'flex', justifyContent: 'space-between',
-      }}
-      >
+
+      <div className="run-of-show">
+        <h5>Run Of Show</h5>
+        <hr />
+        <table>
+          <tbody>
+            <tr>
+              <td>Load In:</td>
+              <td>{dateDetails.loadinTime}</td>
+            </tr>
+            <tr>
+              <td>Sound Check:</td>
+              <td>{dateDetails.soundCheck}</td>
+            </tr>
+            <tr>
+              <td>Doors:</td>
+              <td>{dateDetails.doorTime}</td>
+            </tr>
+            <tr>
+              <td>Set Time:</td>
+              <td>{dateDetails.setTime}</td>
+            </tr>
+            <tr>
+              <td>Load Out Time:</td>
+              <td>{dateDetails.loadoutTime}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div className="notes">
+        <p>Notes</p>
+        <hr />
+        <p>{dateDetails.showNotes}</p>
+      </div>
+
+      <div className="buttons">
         <Link href="/showFullTour" passHref>
-          <Button
-            style={{
-              marginRight: '10px', marginLeft: '10px', paddingLeft: '50px', paddingRight: '50px',
-            }}
-            variant="danger"
-          >Back
+          <Button variant="danger" className="back-button">
+            Back
           </Button>
         </Link>
         <Link href={`/dates/edit/${dateDetails.firebaseKey}`} passHref>
-          <Button
-            style={{
-              marginRight: '10px', marginLeft: '10px', paddingLeft: '50px', paddingRight: '50px', backgroundColor: '#212529', border: 'solid 0px black',
-            }}
-          >Edit
+          <Button className="edit-button">
+            Edit
           </Button>
         </Link>
       </div>
