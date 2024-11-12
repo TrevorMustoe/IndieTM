@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
+import Link from 'next/link';
 import {
   FloatingLabel, Form, Button,
 } from 'react-bootstrap';
@@ -118,14 +119,18 @@ function TourPickerForm({ obj, onSelectTour }) {
             }}
           />
           <Button
-            style={{
-              margin: '10px', width: '40%', backgroundColor: 'var(--accent-color-1)', color: 'var(--button-color)', border: 'Solid 0px black',
-            }}
+            variant="light"
+            size="sm"
             type="submit"
+            style={{ marginRight: '30%', marginTop: '20px' }}
           >
-            {obj.firebaseKey ? 'Save Changes' : 'Save'}
+            {obj.firebaseKey ? 'Save Changes' : 'Save New Tour Name'}
           </Button>
-
+          <Link href="/showForm" passHref>
+            <Button variant="light" size="sm" style={{ marginTop: '20px' }}>
+              Add A New Show
+            </Button>
+          </Link>
         </div>
       </Form>
     </div>
