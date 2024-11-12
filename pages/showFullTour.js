@@ -25,7 +25,6 @@ function ShowFullTour() {
           <DateCard key={dateObj.firebaseKey} dateObj={dateObj} />
         ))}
       </div>
-      <hr className="lines" style={{ marginTop: '40px' }} />
     </div>
   );
 }
