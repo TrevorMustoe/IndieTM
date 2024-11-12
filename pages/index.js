@@ -13,7 +13,7 @@ function Home() {
         padding: '5px',
         maxWidth: '400px',
         margin: '0 auto',
-        marginTop: '200px',
+        marginTop: '10px',
       }}
       >
         <div style={{

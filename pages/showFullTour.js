@@ -12,29 +12,14 @@ function ShowFullTour() {
 
   return (
     <div
-      style={{
-        marginTop: '15vh',
-        marginBottom: '30px',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        alignContent: 'stretch',
-      }}
+      className="mainPickBox"
     >
       <div className="tourPickerBox">
         <label htmlFor="tour">Please select a tour below:</label>
         <TourPickerForm onSelectTour={handleSelectTour} />
       </div>
       <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'start',
-          marginLeft: '45px',
-          marginRight: '30px',
-          gap: '20px',
-        }}
+        className="datesCards"
       >
         {dates.map((dateObj) => (
           <DateCard key={dateObj.firebaseKey} dateObj={dateObj} />
