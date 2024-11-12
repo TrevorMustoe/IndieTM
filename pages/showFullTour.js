@@ -27,28 +27,6 @@ function ShowFullTour() {
       <div className="tourPickerBox">
         <label htmlFor="tour">Please select a tour below:</label>
         <TourPickerForm onSelectTour={handleSelectTour} />
-        <h5>Or</h5>
-        <div style={{
-          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
-        }}
-        >
-          <label htmlFor="date">Start a new tour:</label>
-          <input
-            type="text"
-            placeholder="Enter Tour Name"
-            name="Tour Name"
-            required
-            style={{
-              width: '100%',
-              height: '40px',
-              paddingLeft: '16px',
-              backgroundColor: 'white',
-              borderRadius: '10px',
-              border: 'solid white 2px',
-            }}
-          />
-
-        </div>
       </div>
       <div
         style={{
@@ -67,7 +45,7 @@ function ShowFullTour() {
       <hr className="lines" style={{ marginTop: '40px' }} />
       <Link href="/showForm" passHref>
         <Button style={{ marginTop: '40px' }} variant="light" size="lg">
-          Add A Show New Show
+          Add A New Show
         </Button>
       </Link>
     </div>

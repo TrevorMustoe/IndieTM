@@ -27,7 +27,7 @@ const getSingleTour = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const updateTour = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/tours/`, {
+  fetch(`${endpoint}/tours/${payload.firebaseKey}.json`, { // Specify the tour path
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -39,4 +39,19 @@ const updateTour = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getTours, getSingleTour, updateTour };
+const createTour = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/tours.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+export {
+  getTours, getSingleTour, updateTour, createTour,
+};

@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import {
-  FloatingLabel, Form,
+  FloatingLabel, Form, Button,
 } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
-import { getTours } from '../api/tourData';
+import { createTour, getTours, updateTour } from '../api/tourData';
 import { getDatesByTourId } from '../api/datesData';
 
 const initialState = {
   id: '',
   name: '',
 };
+
 // setting id and name to an empty sting to be able to store the tour name and id when user selects.
 
 function TourPickerForm({ obj, onSelectTour }) {
@@ -52,10 +53,26 @@ function TourPickerForm({ obj, onSelectTour }) {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const payload = { ...formInput, uid: user.uid };
+    createTour(payload).then((newTour) => {
+      const firebaseKey = newTour.name; // 'name' is the Firebase key here
+      const patchPayload = { ...payload, firebaseKey }; // Add firebaseKey to the tour data
+
+      // Now update the tour with the firebaseKey
+      updateTour(patchPayload).then(() => {
+        getTours(user).then(setTours); // Refresh the tours to include the new tour with its firebaseKey
+        setFormInput(initialState); // Reset the form input to clear the input field
+      });
+    });
+  };
+
   return (
 
     <div>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <div>
           <FloatingLabel controlId="floatingSelect" label="Tours">
             <Form.Select
@@ -66,7 +83,6 @@ function TourPickerForm({ obj, onSelectTour }) {
               className="mb-3"
               value={formInput.id}
             // making sure that the current selection displays the id state of fromInput
-              required
             >
               <option value="">Select a Tour</option>
               {/* setting the default value of option selected to an empty string */}
@@ -79,6 +95,37 @@ function TourPickerForm({ obj, onSelectTour }) {
               ))}
             </Form.Select>
           </FloatingLabel>
+        </div>
+        <h5>Or</h5>
+        <div style={{
+          flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
+        }}
+        >
+          <label htmlFor="date">Start a new tour:</label>
+          <input
+            type="text"
+            placeholder="Enter Tour Name"
+            name="name"
+            value={formInput.name}
+            onChange={handleChange}
+            style={{
+              width: '100%',
+              height: '40px',
+              paddingLeft: '16px',
+              backgroundColor: 'white',
+              borderRadius: '10px',
+              border: 'solid white 2px',
+            }}
+          />
+          <Button
+            style={{
+              margin: '10px', width: '40%', backgroundColor: 'var(--accent-color-1)', color: 'var(--button-color)', border: 'Solid 0px black',
+            }}
+            type="submit"
+          >
+            {obj.firebaseKey ? 'Save Changes' : 'Save'}
+          </Button>
+
         </div>
       </Form>
     </div>
