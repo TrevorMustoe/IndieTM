@@ -9,20 +9,12 @@ function Home() {
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
     >
-      <div style={{
-        padding: '5px',
-        maxWidth: '400px',
-        margin: '0 auto',
-        marginTop: '10px',
-      }}
+      <div
+        className="startBox"
+
       >
-        <div style={{
-          border: 'var(--accent-color-1) solid 2px',
-          padding: '80px',
-          backgroundColor: 'var(--accent-color-2)',
-          borderRadius: '30px',
-          color: 'white',
-        }}
+        <div
+          className="startBox2"
         >
           <h1 style={{ fontWeight: '100' }}>Welcome</h1>
           <h3 style={{ fontWeight: '800' }}> {user.displayName}! </h3>

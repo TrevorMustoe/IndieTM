@@ -58,7 +58,7 @@ function AddShowForm({ obj }) {
   };
 
   return (
-    <Container style={{ marginTop: '0% auto', marginBottom: '100px', color: 'var(--accent-color-1)' }} className="add-show-form">
+    <Container style={{ marginTop: '10%', marginBottom: '100px', color: 'var(--accent-color-1)' }} className="add-show-form">
       <Form onSubmit={handleSubmit}>
         <h2 className="text-center mb-4">{obj.firebaseKey ? 'Edit' : 'Create New'} Show Date</h2>
 
