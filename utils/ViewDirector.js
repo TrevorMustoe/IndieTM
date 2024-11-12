@@ -37,21 +37,7 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
             </div>
           </header>
           <section className="sidebar">
-            <div>
-
-              <div
-                style={{
-                  marginLeft: '10%', marginRight: '10%', marginTop: '60px',
-                }}
-                className="userInfo"
-              >
-                <Image
-                  src="/IndieLogo2.png"
-                  height={200}
-                  width={200}
-                />
-              </div>
-
+            <div className="realSideBar">
               <div className="lines" />
               <Link href="/">
                 <div style={{ display: 'flex', justifyContent: 'space-between' }} className="sideLinks">
@@ -71,7 +57,6 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
                   </div>
                 </div>
               </Link>
-
               <div className="lines" />
               <Link href="/showForm">
                 <div style={{ display: 'flex', justifyContent: 'space-between' }} className="sideLinks">

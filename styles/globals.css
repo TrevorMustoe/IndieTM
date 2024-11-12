@@ -44,24 +44,117 @@ body {
   background-color: var(--background-color);
 }
 
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    bottom: 0; /* Hide sidebar on mobile */
+    z-index: 1;
+    height: 10%;
+    padding-bottom: 100px;
+  }
+
+  .header{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+  }
+
+  .w-100{
+    margin-bottom: '100px' 
+  }
+
+  .datesCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .text-white{
+    width: 100%;
+    background: #273c4d;
+    border-radius: 10px;
+
+  }
+  
+  .mainPickBox{
+    margin-top: 5vh;
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: stretch;
+  }
+  
+  .tourPickerBox{
+    background-color: var(--accent-color-2);
+    color: var(--form-text);
+    align-items: baseline;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .realSideBar{
+    background-color: var(--accent-color-2);
+    display: flex;
+    height: 100%;
+    padding-bottom: 200px;
+  }
+
+}
+
+@media (min-width: 768px){
 .dashMain{
   height: 100vh;
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: 0% 1fr;
-  
 }
 
-.header{
-  grid-column: 2 / 2;
-  grid-row: 1 / 2;
+.datesCards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin-left: 45px;
+  margin-right: 30px;
+  gap: 20px,
+}
+
+.mainPickBox{
+  margin-top: 20vh;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: stretch;
+}
+
+.tourPickerBox{
+  background-color: var(--accent-color-2);
+  color: var(--form-text);
+  align-items: baseline;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 60%;
+  margin-bottom: 40px;
 }
 
 .sidebar{
   grid-column: 1 / 2;
   grid-row: 2 / 2;
   background-color: #212529;
-  
+}
+
+}
+
+.header{
+  grid-column: 2 / 2;
+  grid-row: 1 / 2;
 }
 
 .main{
@@ -165,17 +258,6 @@ margin-bottom: 10px;
   margin: 10px;
   padding: 20px;
   margin-top: 60px;
-}
-
-.tourPickerBox{
-  background-color: var(--accent-color-2);
-  color: var(--form-text);
-  align-items: baseline;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 20px;
-  width: 60%;
-  margin-bottom: 40px;
 }
 
 .table{

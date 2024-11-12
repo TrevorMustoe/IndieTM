@@ -17,9 +17,6 @@ function DateCard({ dateObj }) {
   return (
     <Card
       className="text-white"
-      style={{
-        background: '#273c4d', borderRadius: '10px', width: '250px',
-      }}
     >
       <Card.Header
         as="h5"
