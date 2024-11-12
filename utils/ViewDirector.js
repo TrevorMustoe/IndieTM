@@ -7,6 +7,8 @@ import Loading from '../components/Loading';
 import Signin from '../components/Signin';
 import NavigationBar from '../components/NavBar';
 
+// test
+
 const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
   const [darkMode, setDarkMode] = useState(false);
 
