@@ -50,7 +50,42 @@ body {
     bottom: 0; /* Hide sidebar on mobile */
     z-index: 1;
     height: 10%;
-    padding-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    background-color: var(--accent-color-1);
+  }
+
+  .sideLinks-one{
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--accent-color-2);
+    align-content: center;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .sideLinks{
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--accent-color-2);
+    align-content: center;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .iconhome{
+    display: none;
+  }
+
+
+  .lines{
+    height: 1px;
+    width: 100%;
+    background-color: whitesmoke;
   }
 
   .startBox{
@@ -83,7 +118,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    
   }
   
   .text-white{
@@ -113,13 +147,6 @@ body {
     margin-bottom: 10px;
   }
 
-  .realSideBar{
-    background-color: var(--accent-color-2);
-    display: flex;
-    height: 100%;
-    padding-bottom: 200px;
-  }
-
 }
 
 @media (min-width: 768px){
@@ -130,10 +157,32 @@ body {
   grid-template-rows: 0% 1fr;
 }
 
+.sideLinks-one{
+  margin-top: 200px;
+  color: white;
+  font-weight: bold;
+  padding: 10% 5% 10% 5%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--accent-color-1);
+  border: white 1px solid;
+}
+
+.sideLinks{
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+  padding: 10% 5% 10% 5%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--accent-color-1);
+  border: white 1px solid;
+}
+
 .startBox{
-  padding: '5px';
-  max-width: '200px';
-  margin: '0 auto';
+  padding: 5px;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 .startBox2{
@@ -202,22 +251,12 @@ body {
  
 }
 
-.sideLinks{
-  color: white;
-  font-weight: bold;
-  padding: 10% 5% 10% 5%;
-  border-radius: 5px;
-  cursor: pointer;
+.sideLinks-one:hover{
+  background-color: #273c4d;
 }
 
 .sideLinks:hover{
   background-color: #273c4d;
-}
-
-.lines{
-  height: 1px;
-  width: 100%;
-  background-color: black;
 }
 
 .iconhome{

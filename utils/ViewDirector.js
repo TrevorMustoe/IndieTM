@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import Image from 'next/image';
 import { Button, Form } from 'react-bootstrap';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -37,75 +36,43 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
             </div>
           </header>
           <section className="sidebar">
-            <div className="realSideBar">
-              <div className="lines" />
-              <Link href="/">
-                <div style={{ display: 'flex', justifyContent: 'space-between' }} className="sideLinks">
-                  <Button
-                    style={{
-                      marginRight: '20px', color: 'white', border: '0px', backgroundColor: 'rgba(0, 0, 0, 0)',
-                    }}
-                    href="/"
-                  >Home
-                  </Button>
-                  <div className="iconhome">
-                    <Image
-                      src="/house.png"
-                      height={30}
-                      width={30}
-                    />
-                  </div>
-                </div>
-              </Link>
-              <div className="lines" />
-              <Link href="/showForm">
-                <div style={{ display: 'flex', justifyContent: 'space-between' }} className="sideLinks">
-                  <Button
-                    style={{
-                      marginRight: '20px', color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
-                    }}
-                    href="/showForm"
-                  >Add Show
-                  </Button>
-                  <div className="iconhome">
-                    <Image
-                      src="/addshow.png"
-                      height={30}
-                      width={30}
-                      border="solid blue 5px"
-                    />
-                  </div>
-                </div>
-              </Link>
-
-              <div className="lines" />
-              <Link href="/showFullTour">
-                <div style={{ display: 'flex', justifyContent: 'space-between' }} className="sideLinks">
-                  <Button
-                    style={{
-                      marginRight: '20px', color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
-                    }}
-                    href="/showFullTour"
-                  >Tours
-                  </Button>
-                  <div className="iconhome">
-                    <Image
-                      src="/tourpic.png"
-                      height={30}
-                      width={30}
-                      border="solid blue 5px"
-                    />
-                  </div>
-                </div>
-              </Link>
-
-              <div className="lines" />
-
-              <div style={{ display: 'flex', justifyContent: 'space-evenly' }} className="sideLinks">
-                <h5>☀️</h5>
-                <Form.Switch onChange={darkModeToggle} />
-                <h5>🌙</h5>
+            <Link href="/">
+              <div className="sideLinks-one">
+                <Button
+                  style={{
+                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
+                  }}
+                  href="/"
+                >Home
+                </Button>
               </div>
+            </Link>
+            <Link href="/showForm">
+              <div className="sideLinks">
+                <Button
+                  style={{
+                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
+                  }}
+                  href="/showForm"
+                >Add Show
+                </Button>
+              </div>
+            </Link>
+            <Link href="/showFullTour">
+              <div className="sideLinks">
+                <Button
+                  style={{
+                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
+                  }}
+                  href="/showFullTour"
+                >Tours
+                </Button>
+              </div>
+            </Link>
+            <div className="sideLinks">
+              <h5>☀️</h5>
+              <Form.Switch onChange={darkModeToggle} />
+              <h5>🌙</h5>
             </div>
           </section>
           <main className="main">
