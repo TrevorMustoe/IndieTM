@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { FloatingLabel, Button, Form } from 'react-bootstrap';
-import { useState, useEffect } from 'react';
-import { useAuth } from '../utils/context/authContext';
+import { useEffect, useState } from 'react';
+import { Button, FloatingLabel, Form } from 'react-bootstrap';
+import { createDate, updateDate } from '../api/datesData';
 import { getTours } from '../api/tourData';
-import { updateDate, createDate } from '../api/datesData';
+import { useAuth } from '../utils/context/authContext';
 
 const initialState = {
   tourID: '',
@@ -26,9 +26,14 @@ const initialState = {
 
 // setting ititial state of each of these from inputs to empty strings
 
+// TM TODO: Create initial state that takes in new tour names
+// TM TODO: Set up the hand change and handle submit to take in the new tour name
+// TM TODO: Set up a version of handleSubmit only for tour submissions and reset the form the be able to add more.
+// TM TODO: Add in option on tour picker form that will handle a modal and add in new tour name
+
 function AddShowForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
-  // using useState to set the formInput state to initaial state from above
+  // This will be here to check if the modal button was clicked in the options
   const [tours, setTours] = useState([]);
   // setting tour state to an empty array to be able to store and change the tour state
   const router = useRouter();
@@ -76,6 +81,10 @@ function AddShowForm({ obj }) {
       });
     }
   };
+
+  // This is where I can add a tourSubmit logic to only activate when clicking submit on new tour.
+  // maybe make it a modulus or whatever it is called when the littl box pops up.
+
   return (
     <div style={{ margin: '20px', color: 'var(--accent-color-1)' }}>
       <Form onSubmit={handleSubmit}>
@@ -101,7 +110,6 @@ function AddShowForm({ obj }) {
                   onChange={handleChange}
                   className="mb-3"
                   value={formInput.tourID}
-                  required
                 >
                   <option value="">Select a Tour</option>
                   {tours.map((tour) => (
@@ -109,8 +117,12 @@ function AddShowForm({ obj }) {
                       {tour.name}
                     </option>
                   ))}
+                  <option value="">New Tour Name</option>
+                  {/* Set this so change state to allow modal to pop up, then add new tour to modal, set state of new tours and clear form */}
                 </Form.Select>
               </FloatingLabel>
+            </div>
+            <div className="tourAndDate">
               <div style={{
                 flexDirection: 'column', marginRight: '5px', marginLeft: '5px', marginBottom: '10px',
               }}
