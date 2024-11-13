@@ -58,13 +58,24 @@ function AddShowForm({ obj }) {
   };
 
   return (
-    <Container style={{ marginTop: '10%', marginBottom: '100px', color: 'var(--accent-color-1)' }} className="add-show-form">
+    <Container
+      style={{
+        marginTop: '10%',
+        marginBottom: '100px',
+        color: 'var(--accent-color-1)',
+        backgroundColor: '#273c4d',
+        padding: '20px',
+        borderRadius: '5px',
+      }}
+      className="add-show-form"
+    >
       <Form onSubmit={handleSubmit}>
-        <h2 className="text-center mb-4">{obj.firebaseKey ? 'Edit' : 'Create New'} Show Date</h2>
+        <h2 style={{ color: 'white' }} className="text-center mb-4">{obj.firebaseKey ? 'Edit' : 'Create New'} Show Date</h2>
 
         <Row className="mb-3">
           <Col xs={12}>
             <FloatingLabel controlId="floatingSelect" label="Select Tour">
+
               <Form.Select
                 aria-label="Select Tour"
                 name="tourID"
@@ -126,7 +137,7 @@ function AddShowForm({ obj }) {
 
         <Row className="mb-3">
           <Col xs={6}>
-            <FloatingLabel label="Load In Time">
+            <FloatingLabel style={{ zIndex: '0' }} label="Load In Time">
               <Form.Control
                 type="time"
                 name="loadinTime"
@@ -137,7 +148,7 @@ function AddShowForm({ obj }) {
             </FloatingLabel>
           </Col>
           <Col xs={6}>
-            <FloatingLabel label="Sound Check Time">
+            <FloatingLabel style={{ zIndex: '0' }} label="Sound Check Time">
               <Form.Control
                 type="time"
                 name="soundCheck"
@@ -151,7 +162,7 @@ function AddShowForm({ obj }) {
 
         <Row className="mb-3">
           <Col xs={6}>
-            <FloatingLabel label="Door Time">
+            <FloatingLabel style={{ zIndex: '0' }} label="Door Time">
               <Form.Control
                 type="time"
                 name="doorTime"
@@ -162,7 +173,7 @@ function AddShowForm({ obj }) {
             </FloatingLabel>
           </Col>
           <Col xs={6}>
-            <FloatingLabel label="Set Time">
+            <FloatingLabel style={{ zIndex: '0' }} label="Set Time">
               <Form.Control
                 type="time"
                 name="setTime"
@@ -176,7 +187,7 @@ function AddShowForm({ obj }) {
 
         <Row className="mb-3">
           <Col xs={12}>
-            <FloatingLabel label="Venue Name">
+            <FloatingLabel style={{ zIndex: '0' }} label="Venue Name">
               <Form.Control
                 type="text"
                 placeholder="Venue Name"
@@ -191,7 +202,7 @@ function AddShowForm({ obj }) {
 
         <Row className="mb-3">
           <Col xs={12}>
-            <FloatingLabel label="Venue Address">
+            <FloatingLabel style={{ zIndex: '0' }} label="Venue Address">
               <Form.Control
                 type="text"
                 placeholder="Venue Address"
@@ -206,7 +217,7 @@ function AddShowForm({ obj }) {
 
         <Row className="mb-3">
           <Col xs={12}>
-            <FloatingLabel label="Hospitality Name">
+            <FloatingLabel style={{ zIndex: '0' }} label="Hospitality Name">
               <Form.Control
                 type="text"
                 placeholder="Hospitality Name"
@@ -221,7 +232,7 @@ function AddShowForm({ obj }) {
 
         <Row className="mb-3">
           <Col xs={12}>
-            <FloatingLabel label="Show Notes">
+            <FloatingLabel style={{ zIndex: '0' }} label="Show Notes">
               <Form.Control
                 as="textarea"
                 placeholder="Add notes for this show"
@@ -234,8 +245,8 @@ function AddShowForm({ obj }) {
           </Col>
         </Row>
 
-        <Button variant="primary" type="submit" className="w-100">
-          {obj.firebaseKey ? 'Update Show' : 'Add Show'}
+        <Button variant="light" type="submit" className="w-100">
+          {obj.firebaseKey ? 'Save Changes' : 'Save New Show'}
         </Button>
       </Form>
     </Container>

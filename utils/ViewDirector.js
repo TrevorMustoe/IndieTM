@@ -42,21 +42,10 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
               <div className="sideLinks-one">
                 <Button
                   style={{
-                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
+                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px', fontSize: '15px',
                   }}
                   href="/"
                 >Home
-                </Button>
-              </div>
-            </Link>
-            <Link href="/showForm">
-              <div className="sideLinks">
-                <Button
-                  style={{
-                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
-                  }}
-                  href="/showForm"
-                >Add Show
                 </Button>
               </div>
             </Link>
@@ -64,17 +53,27 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
               <div className="sideLinks">
                 <Button
                   style={{
-                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
+                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px', fontSize: '15px',
                   }}
                   href="/showFullTour"
                 >Tours
                 </Button>
               </div>
             </Link>
+            <Link href="/showForm">
+              <div className="sideLinks">
+                <Button
+                  style={{
+                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px', fontSize: '15px',
+                  }}
+                  href="/showForm"
+                >Add Show
+                </Button>
+              </div>
+            </Link>
             <div className="sideLinks">
-              <h5>☀️</h5>
+              <h5 style={{ fontSize: '15px' }}>Settings</h5>
               <Form.Switch onChange={darkModeToggle} />
-              <h5>🌙</h5>
             </div>
           </section>
           <main className="main">
