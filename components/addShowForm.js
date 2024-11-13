@@ -60,7 +60,6 @@ function AddShowForm({ obj }) {
   return (
     <Container
       style={{
-        marginTop: '10%',
         marginBottom: '100px',
         color: 'var(--accent-color-1)',
         backgroundColor: '#273c4d',
@@ -70,7 +69,7 @@ function AddShowForm({ obj }) {
       className="add-show-form"
     >
       <Form onSubmit={handleSubmit}>
-        <h2 style={{ color: 'white' }} className="text-center mb-4">{obj.firebaseKey ? 'Edit' : 'Create New'} Show Date</h2>
+        <h2 style={{ color: 'white' }} className="text-center mb-4">{obj.firebaseKey ? 'Edit' : 'Add New'} Show</h2>
 
         <Row className="mb-3">
           <Col xs={12}>
