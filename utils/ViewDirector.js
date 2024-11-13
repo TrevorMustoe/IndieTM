@@ -49,14 +49,14 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
                 </Button>
               </div>
             </Link>
-            <Link href="/showForm">
+            <Link href="/showsPage">
               <div className="sideLinks">
                 <Button
                   style={{
                     color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
                   }}
-                  href="/showForm"
-                >Add Show
+                  href="/showsPage"
+                >Shows
                 </Button>
               </div>
             </Link>

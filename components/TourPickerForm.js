@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import Link from 'next/link';
 import {
-  FloatingLabel, Form, Button, Container, Row, Col,
+  FloatingLabel, Form, Container, Row, Col, Button,
 } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 import { createTour, getTours, updateTour } from '../api/tourData';
@@ -72,49 +72,16 @@ function TourPickerForm({ obj, onSelectTour }) {
                 ))}
               </Form.Select>
             </FloatingLabel>
-          </Col>
-        </Row>
-        <Row className="text-center mb-3">
-          <Col>
-            <h5>Or</h5>
-          </Col>
-        </Row>
-        <Row className="justify-content-center">
-          <Col xs={12} sm={10} md={8} lg={6}>
-            <label htmlFor="date" className="form-label">Start a new tour:</label>
-            <input
-              type="text"
-              placeholder="Enter Tour Name"
-              name="name"
-              value={formInput.name}
-              onChange={handleChange}
-              className="form-control mb-3"
-              style={{
-                height: '40px',
-                paddingLeft: '16px',
-                backgroundColor: 'white',
-                borderRadius: '10px',
-              }}
-            />
-          </Col>
-        </Row>
-        <Row className="justify-content-center">
-          <Col xs="auto">
-            <Button
-              variant="light"
-              size="sm"
-              type="submit"
-              className="mb-2"
-              disabled={!formInput.name.trim()} // Disable button if name is empty
-            >
-              {obj.firebaseKey ? 'Save Changes' : 'Save New Tour Name'}
-            </Button>
-          </Col>
-          <Col xs="auto">
-            <Link href="/showForm" passHref>
-              <Button variant="light" size="sm" className="mb-2">
-                Add A New Show
-              </Button>
+            <Link href="/showFullTour">
+              <div className="sm">
+                <Button
+                  style={{
+                    color: 'black', backgroundColor: 'white', border: '0px', fontSize: '15px',
+                  }}
+                  href="/showFullTour"
+                >Add New Tour
+                </Button>
+              </div>
             </Link>
           </Col>
         </Row>
