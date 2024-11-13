@@ -22,6 +22,27 @@
   --button-color: #bec3c8;
 }
 
+[data-theme='green']{
+  --background-color: #2a2f36;
+  --accent-color-1: #bec3c8;
+  --accent-color-2: #274d2d;
+  --button-color: #2a2f36;
+}
+
+[data-theme='purp']{
+  --background-color: #2a2f36;
+  --accent-color-1: #bec3c8;
+  --accent-color-2: #4d274c;
+  --button-color: #2a2f36;
+}
+
+[data-theme='purp']{
+  --background-color: #2a2f36;
+  --accent-color-1: #bec3c8;
+  --accent-color-2: #4d2727;
+  --button-color: #2a2f36;
+}
+
 html,
 body {
   padding: 0;
@@ -54,29 +75,34 @@ body {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    background-color: var(--accent-color-2);
+  }
+
+  .add-show-form{
+    margin-top: 10px;
   }
 
   .sideLinks-one{
     color: white;
     font-weight: bold;
     cursor: pointer;
-    background-color: #2a2f36;
+    background-color: #212529;
     align-content: center;
     text-align: center;
-    border: solid 2px #273c4d;
     width: 25%;
+    border: white 1px solid;
+    border-radius: 5px;
   }
 
   .sideLinks{
     color: white;
     font-weight: bold;
     cursor: pointer;
-    background-color: #2a2f36;
+    background-color: #212529;
     align-content: center;
     text-align: center;
-    border: solid 2px #273c4d;
     width: 25%;
+    border: white 1px solid;
+    border-radius: 5px;
   }
 
   .iconhome{
@@ -151,12 +177,27 @@ body {
 
 }
 
+/* This starts bigger media quiries for big screens */
 @media (min-width: 768px){
 .dashMain{
   height: 100vh;
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: 0% 1fr;
+}
+
+.add-show-form{
+  margin-top: 15%;
+}
+
+.sideLinks-one:hover{
+  background-color: #1e2e3c;
+  padding: 10% 10% 10% 10%;
+}
+
+.sideLinks:hover{
+  background-color: #1e2e3c;
+  padding: 10% 10% 10% 10%;
 }
 
 .sideLinks-one{
@@ -166,19 +207,17 @@ body {
   padding: 10% 5% 10% 5%;
   border-radius: 5px;
   cursor: pointer;
-  background-color: var(--accent-color-1);
-  border: white 1px solid;
+  background-color: #273c4d;
 }
 
 .sideLinks{
-  margin-top: 20px;
+  margin-top: 5px;
   color: white;
   font-weight: bold;
   padding: 10% 5% 10% 5%;
   border-radius: 5px;
   cursor: pointer;
-  background-color: var(--accent-color-1);
-  border: white 1px solid;
+  background-color: #273c4d;
 }
 
 .startBox{
@@ -197,7 +236,7 @@ body {
 }
 
 .text-white{
-  width: 80%;
+  width: 15%;
   background: #273c4d;
   border-radius: 10px;
   justify-content: center;
@@ -206,10 +245,12 @@ body {
 .datesCards{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-content: flex-start;
+  justify-content: flex-start;
   margin-left: 45px;
   margin-right: 30px;
   gap: 20px;
+  width: 100%;
 }
 
 .mainPickBox{
@@ -251,14 +292,6 @@ body {
   grid-row: 2 / 2;
   background-color: var(--main-light);
  
-}
-
-.sideLinks-one:hover{
-  background-color: #273c4d;
-}
-
-.sideLinks:hover{
-  background-color: #273c4d;
 }
 
 .iconhome{

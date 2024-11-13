@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import { Button, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { useAuth } from './context/authContext';
 import Loading from '../components/Loading';
 import Signin from '../components/Signin';
@@ -10,16 +9,6 @@ import NavigationBar from '../components/NavBar';
 // test
 
 const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const darkModeToggle = (e) => {
-    setDarkMode(e.target.checked);
-  };
-
-  useEffect(() => {
-    document.querySelector('body').setAttribute('data-theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
-
   const { user, userLoading } = useAuth();
 
   // if user state is null, then show loader
@@ -64,17 +53,24 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
               <div className="sideLinks">
                 <Button
                   style={{
-                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px', fontSize: '15px',
+                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
                   }}
                   href="/showForm"
                 >Add Show
                 </Button>
               </div>
             </Link>
-            <div className="sideLinks">
-              <h5 style={{ fontSize: '15px' }}>Settings</h5>
-              <Form.Switch onChange={darkModeToggle} />
-            </div>
+            <Link href="/settingPage">
+              <div className="sideLinks">
+                <Button
+                  style={{
+                    color: 'white', backgroundColor: 'rgba(0, 0, 0, 0)', border: '0px',
+                  }}
+                  href="/settingPage"
+                >Settings
+                </Button>
+              </div>
+            </Link>
           </section>
           <main className="main">
             <div className="container">
