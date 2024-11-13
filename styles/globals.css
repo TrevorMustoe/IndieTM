@@ -54,27 +54,29 @@ body {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    background-color: var(--accent-color-1);
+    background-color: var(--accent-color-2);
   }
 
   .sideLinks-one{
     color: white;
     font-weight: bold;
     cursor: pointer;
-    background-color: var(--accent-color-2);
+    background-color: #2a2f36;
     align-content: center;
     text-align: center;
-    padding: 12px;
+    border: solid 2px #273c4d;
+    width: 25%;
   }
 
   .sideLinks{
     color: white;
     font-weight: bold;
     cursor: pointer;
-    background-color: var(--accent-color-2);
+    background-color: #2a2f36;
     align-content: center;
     text-align: center;
-    padding: 12px;
+    border: solid 2px #273c4d;
+    width: 25%;
   }
 
   .iconhome{
