@@ -4,12 +4,15 @@ import {
   Form, Button, Container, Row, Col, Modal,
 } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
-import { createTour, getTours, updateTour } from '../api/tourData';
+import {
+  createTour, getTours, updateTour, getSingleTour,
+} from '../api/tourData';
 import { getDatesByTourId } from '../api/datesData';
 
 const initialState = {
   id: '',
   name: '',
+  firebaseKey: '', // Ensure we are capturing the firebaseKey for editing
 };
 
 function AddTourForm({ obj, onSelectTour }) {
@@ -21,9 +24,10 @@ function AddTourForm({ obj, onSelectTour }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // Fetch tours and set selected tour if it's passed in as a prop
   useEffect(() => {
     getTours(user).then(setTours);
-    if (obj) setFormInput(obj);
+    if (obj) setFormInput(obj); // Auto-populate the form when a tour is selected for editing
   }, [obj, user]);
 
   const handleChange = (e) => {
@@ -43,19 +47,42 @@ function AddTourForm({ obj, onSelectTour }) {
     e.preventDefault();
 
     const payload = { ...formInput, uid: user.uid };
-    createTour(payload).then((newTour) => {
-      const firebaseKey = newTour.name;
-      const patchPayload = { ...payload, firebaseKey };
 
-      updateTour(patchPayload).then(() => {
-        // Refresh the tour list after adding a new tour
+    if (formInput.firebaseKey) { // Ensure you're updating an existing tour
+      updateTour(formInput).then(() => {
         getTours(user).then((updatedTours) => {
           setTours(updatedTours);
-          setFormInput(initialState);
+          setFormInput(initialState); // Reset form
           handleClose(); // Close the modal
         });
+      }).catch((err) => console.error('Error updating tour:', err));
+    } else { // If there is no `firebaseKey`, create a new tour
+      createTour(payload).then((newTour) => {
+        const firebaseKey = newTour.name; // Assuming the new tour's key is its name (may need adjustment)
+        const patchPayload = { ...payload, firebaseKey };
+
+        updateTour(patchPayload).then(() => {
+          // Refresh the tour list after adding a new tour
+          getTours(user).then((updatedTours) => {
+            setTours(updatedTours);
+            setFormInput(initialState);
+            handleClose(); // Close the modal
+          });
+        }).catch((err) => console.error('Error creating tour:', err));
       });
-    });
+    }
+  };
+
+  // When clicking "Edit Tour Name", this function will fetch the tour by ID and set it to the form
+  const handleEditClick = (firebaseKey) => {
+    getSingleTour(firebaseKey).then((tourData) => {
+      setFormInput({
+        id: tourData.id,
+        name: tourData.name,
+        firebaseKey: tourData.firebaseKey, // Make sure to set the firebaseKey for editing
+      });
+      handleShow(); // Open the modal with the fetched tour data
+    }).catch((err) => console.error('Error fetching tour by ID:', err));
   };
 
   return (
@@ -92,12 +119,13 @@ function AddTourForm({ obj, onSelectTour }) {
               {tour.name}
               <div style={{ display: 'flex' }}>
                 <Button
-                  size="sm"
-                  style={{
-                    textAlign: 'center', backgroundColor: '#273c4d', border: '0px', color: 'white',
-                  }}
+                  style={{ marginBottom: '10px' }}
                   className="m-2"
-                >Edit Tour Name
+                  size="sm"
+                  variant="dark"
+                  onClick={() => handleEditClick(tour.firebaseKey)} // Trigger edit and fetch the tour
+                >
+                  Edit Tour Name
                 </Button>
                 <Button size="sm" className="m-2" style={{ border: '0px' }} variant="danger">Delete Show</Button>
               </div>
@@ -106,9 +134,10 @@ function AddTourForm({ obj, onSelectTour }) {
         </Col>
       </Row>
 
+      {/* Modal to Add/Edit Tour */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add New Tour</Modal.Title>
+          <Modal.Title>{formInput.firebaseKey ? 'Edit Tour' : 'Add New Tour'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -134,7 +163,7 @@ function AddTourForm({ obj, onSelectTour }) {
               className="mb-2"
               disabled={!formInput.name.trim()}
             >
-              {obj.firebaseKey ? 'Save Changes' : 'Save New Tour Name'}
+              {formInput.firebaseKey ? 'Save Changes' : 'Save New Tour Name'}
             </Button>
           </Form>
         </Modal.Body>
