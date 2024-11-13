@@ -2,8 +2,10 @@ import {
   Tabs, Tab,
 } from 'react-bootstrap';
 import UiOptions from '../components/userInterfaceOptions';
+import { useAuth } from '../utils/context/authContext';
 
 function SettingsPage() {
+  const { user } = useAuth();
   return (
     <div style={{
       marginTop: '20%',
@@ -17,7 +19,8 @@ function SettingsPage() {
     >
       <Tabs defaultActiveKey="tab1" id="settings-tabs" className="mb-3">
         <Tab eventKey="tab1" title="User Information">
-          <div>Content for Tab 1</div>
+          <h4 style={{ fontWeight: 'bold' }}>User Name:</h4>
+          <div>{user.displayName}</div>
         </Tab>
         <Tab eventKey="tab2" title="Themes + Colors">
           <div><UiOptions /></div>
