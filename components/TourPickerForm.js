@@ -23,15 +23,16 @@ function TourPickerForm({ obj, onSelectTour }) {
     if (obj) setFormInput(obj);
   }, [obj, user]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (tourId) => {
     setFormInput((prevState) => ({
       ...prevState,
-      [name]: value,
+      id: tourId, // Update the selected tour ID
     }));
 
-    if (name === 'id' && value) {
-      getDatesByTourId(user.uid, value).then(onSelectTour)
+    // Fetch tour dates based on the selected tour ID and pass to parent component
+    if (tourId) {
+      getDatesByTourId(user.uid, tourId)
+        .then(onSelectTour) // This will pass the dates to the parent component
         .catch((err) => console.error('Error getting dates by tour ID:', err));
     }
   };
@@ -53,33 +54,30 @@ function TourPickerForm({ obj, onSelectTour }) {
 
   return (
     <Container fluid className="p-3">
+      <FloatingLabel controlId="floatingSelect" label="Tours">
+        {tours.map((tour) => (
+          <Button
+            key={tour.firebaseKey}
+            aria-label="Tours"
+            onClick={() => handleChange(tour.firebaseKey)} // Pass tour's firebaseKey to handleChange
+            className="mb-3"
+          >
+            {tour.name}
+          </Button>
+        ))}
+      </FloatingLabel>
+
       <Form onSubmit={handleSubmit}>
         <Row className="justify-content-center">
           <Col xs={12} sm={10} md={8} lg={6}>
-            <FloatingLabel controlId="floatingSelect" label="Tours">
-              <Form.Select
-                aria-label="Tours"
-                name="id"
-                onChange={handleChange}
-                className="mb-3"
-                value={formInput.id}
-              >
-                <option value="">Select a Tour</option>
-                {tours.map((tour) => (
-                  <option key={tour.firebaseKey} value={tour.firebaseKey}>
-                    {tour.name}
-                  </option>
-                ))}
-              </Form.Select>
-            </FloatingLabel>
             <Link href="/showFullTour">
               <div className="sm">
                 <Button
                   style={{
                     color: 'black', backgroundColor: 'white', border: '0px', fontSize: '15px',
                   }}
-                  href="/showFullTour"
-                >Add New Tour
+                >
+                  Add New Tour
                 </Button>
               </div>
             </Link>
