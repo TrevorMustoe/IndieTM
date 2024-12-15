@@ -13,7 +13,6 @@ function ShowDatesPage() {
 
   useEffect(() => {
     if (firebaseKey && user?.uid) {
-      console.log('firebaseKey:', firebaseKey, 'userUID:', user.uid);
       getDatesByTourId(user.uid, firebaseKey)
         .then((fetchedDates) => {
           console.log('Fetched dates:', fetchedDates);
@@ -34,7 +33,7 @@ function ShowDatesPage() {
   return (
     <div>
       <div>
-        <h1>Tour Dates</h1>
+        <h1 style={{ marginTop: '20%' }}>Tour Dates</h1>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
           {dates.map((date) => (
             <DateCard key={date.firebaseKey} dateObj={date} />
@@ -42,7 +41,7 @@ function ShowDatesPage() {
         </div>
       </div>
       <div className="buttons">
-        <Button href="/showFullTour" passHref variant="danger" className="back-button">
+        <Button style={{ marginTop: '20px', marginBottom: '100px' }} href="/showFullTour" passHref variant="danger" className="back-button">
           Back
         </Button>
       </div>
