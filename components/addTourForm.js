@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 import {
-  createTour, getTours, updateTour, getSingleTour,
+  createTour, getTours, updateTour, getSingleTour, deleteTour,
 } from '../api/tourData';
 import { getDatesByTourId } from '../api/datesData';
 
@@ -26,6 +26,15 @@ function AddTourForm({ obj, onSelectTour }) {
   const handleShow = () => setShow(true);
 
   const router = useRouter();
+
+  // Delete tour handler
+  const deleteThisTour = (tour) => {
+    if (window.confirm(`Delete ${tour.name}?`)) {
+      deleteTour(tour.firebaseKey).then(() => {
+        setTours((prevTours) => prevTours.filter((t) => t.firebaseKey !== tour.firebaseKey));
+      }).catch((err) => console.error('Error deleting tour:', err));
+    }
+  };
 
   const handleShowDates = (firebaseKey) => {
     if (firebaseKey) {
@@ -110,6 +119,7 @@ function AddTourForm({ obj, onSelectTour }) {
           <h2 style={{ textAlign: 'center' }}>All Tours</h2>
         </Col>
       </Row>
+
       <Row className="justify-content-center">
         <Col style={{
           display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'flex-start', alignContent: 'space-between',
@@ -132,13 +142,12 @@ function AddTourForm({ obj, onSelectTour }) {
                   className="m-2"
                   size="sm"
                   variant="dark"
+                  value={tour.name}
                   onClick={() => handleEditClick(tour.firebaseKey)}
                 >
                   Edit Tour Name
                 </Button>
-                <Button size="sm" className="m-2" variant="danger">
-                  Delete Show
-                </Button>
+                <Button size="sm" onClick={() => deleteThisTour(tour)} className="m-2" style={{ border: '0px' }} variant="danger">Delete Tour</Button>
               </div>
             </div>
           ))}
@@ -189,6 +198,7 @@ AddTourForm.propTypes = {
   obj: PropTypes.shape({
     name: PropTypes.string,
     firebaseKey: PropTypes.string,
+    id: PropTypes.string,
   }),
   onSelectTour: PropTypes.func,
 };
