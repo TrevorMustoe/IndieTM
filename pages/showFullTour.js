@@ -7,6 +7,7 @@ function ShowFullTour() {
     >
       <div className="showToursBox">
         <AddTourForm />
+
       </div>
     </div>
   );

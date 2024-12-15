@@ -31,7 +31,7 @@ function DateCard({ dateObj }) {
       </Card.Body>
       <Card.Footer>
         <div style={{ justifyContent: 'space-between', marginTop: '0px' }}>
-          <Link href={`/dates/${dateObj.firebaseKey}`} passHref>
+          <Link href={`/dates/${dateObj.firebaseKey}`} passhref>
             <Button
               size="sm"
               style={{
