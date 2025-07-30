@@ -1,3 +1,5 @@
+// This is a module for that the promises live that are getting the dates data from our data base
+
 import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;

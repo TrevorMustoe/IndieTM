@@ -45,7 +45,7 @@ function AddTourForm({ obj, onSelectTour }) {
   };
 
   useEffect(() => {
-    getTours(user).then(setTours);
+    getTours(user.uid).then(setTours);
     if (obj) setFormInput(obj);
   }, [obj, user]);
 
@@ -69,7 +69,7 @@ function AddTourForm({ obj, onSelectTour }) {
 
     if (formInput.firebaseKey) {
       updateTour(formInput).then(() => {
-        getTours(user).then((updatedTours) => {
+        getTours(user.uid).then((updatedTours) => {
           setTours(updatedTours);
           setFormInput(initialState);
           handleClose();
@@ -81,7 +81,7 @@ function AddTourForm({ obj, onSelectTour }) {
         const patchPayload = { ...payload, firebaseKey };
 
         updateTour(patchPayload).then(() => {
-          getTours(user).then((updatedTours) => {
+          getTours(user.uid).then((updatedTours) => {
             setTours(updatedTours);
             setFormInput(initialState);
             handleClose();
@@ -122,7 +122,7 @@ function AddTourForm({ obj, onSelectTour }) {
 
       <Row className="justify-content-center">
         <Col style={{
-          display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'flex-start', alignContent: 'space-between',
+          gap: '10px', justifyContent: 'flex-start', alignContent: 'space-between',
         }}
         >
           {tours.map((tour) => (
