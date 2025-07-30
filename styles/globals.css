@@ -157,7 +157,7 @@ body {
   
   .mainPickBox{
     margin-top: 5vh;
-    margin-bottom: 30px;
+    margin-bottom: 30%;
     width: 100%;
     display: flex;
     flex-direction: column;
